@@ -6,15 +6,15 @@ $activities = getActivities();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 ">
-    <h2 class="text-4xl font-bold text-[#660000] text-center mb-6">Activities</h2>
-    <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
+<main class="flex-grow bg-[#ffffff] py-8 px-4">
+    <h2 class="text-4xl font-bold text-[#6C8BC9] text-center mb-6">Activities</h2>
+    <p class="text-lg text-black text-center max-w-2xl mx-auto mb-12">
         Stay updated on our recent and upcoming events as we continue to grow in faith and community service.
     </p>
 
     <!-- Upcoming Events Section -->
-    <section class="mb-20">
-        <h3 class="text-3xl font-semibold text-center text-[#660000] mb-8">Upcoming Events</h3>
+    <section class="mb-12">
+        <h3 class="text-3xl font-semibold text-center text-[#6C8BC9] mb-8">Upcoming Events</h3>
 
         <!-- Event Posters Carousel -->
         <div class="relative overflow-hidden max-w-5xl mx-auto">
@@ -25,7 +25,7 @@ $activities = getActivities();
                         <div class="relative w-full md:w-1/2 flex-shrink-0 event-item">
                             <img src="<?= $event['poster'] ?>" alt="<?= htmlspecialchars($event['name']) ?>" class="w-full h-64 object-cover rounded-lg shadow-lg event-img">
                             <div class="absolute inset-0 flex justify-center items-center p-4 rounded-lg event-overlay">
-                                <div class="bg-[#c19999] bg-opacity-60 text-white px-6 py-4 rounded-md">
+                                <div class="bg-[#6C8BC9]/60 text-white px-6 py-4 rounded-md hover:bg-[#D18C7C]/60 transition">
                                     <h3 class="text-2xl font-bold text-center"><?= htmlspecialchars($event['name']) ?></h3>
                                     <p class="text-sm mt-2 text-center">Date: <?= date("jS F Y", strtotime($event['date'])) ?></p>
                                     <p class="text-sm text-center">Venue: <?= htmlspecialchars($event['venue']) ?></p>
@@ -34,7 +34,7 @@ $activities = getActivities();
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p class="text-center text-gray-600">No upcoming events at the moment.</p>
+                    <p class="text-center text-black">No upcoming events at the moment.</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -42,7 +42,7 @@ $activities = getActivities();
 
     <!-- Periodic Activities Section -->
     <section>
-        <h3 class="text-3xl font-semibold text-center text-[#660000] mb-8">Periodic Activities</h3>
+        <h3 class="text-3xl font-semibold text-center text-[#6C8BC9] mb-8">Periodic Activities</h3>
 
         <div class="container mx-auto space-y-16">
             <?php $reverse = false; ?>
@@ -52,8 +52,8 @@ $activities = getActivities();
                         <img src="<?= $activity['image'] ?>" alt="<?= $activity['name'] ?>" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     </div>
                     <div class="md:w-1/2 md:<?= $reverse ? 'pr' : 'pl'; ?>-12 text-left animate-fadeIn">
-                        <h3 class="text-3xl font-semibold text-[#660000]"><?= $activity['name'] ?></h3>
-                        <p class="text-gray-800 mt-4"><?= $activity['description'] ?></p>
+                        <h3 class="text-3xl font-semibold text-[#6C8BC9]"><?= $activity['name'] ?></h3>
+                        <p class="text-black mt-4"><?= $activity['description'] ?></p>
                     </div>
                 </div>
                 <?php $reverse = !$reverse; ?>

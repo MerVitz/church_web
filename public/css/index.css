@@ -43,7 +43,7 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #660000;
+    background-color: #6C8BC9;
     transition: width 0.3s ease, left 0.3s ease;
 }
 
