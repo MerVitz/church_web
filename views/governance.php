@@ -3,7 +3,7 @@ $pageTitle = "Governance";
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 text-center mt-20">
+<main class="flex-grow bg-white py-12 px-4 text-center ">
     <h2 class="text-2xl font-bold mb-4 text-[#660000]">Governance</h2>
     <p class="text-gray-700 mb-8">
         Learn about the leadership and organizational structure of the Anglican Church of Kenya. 

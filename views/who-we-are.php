@@ -6,7 +6,7 @@ $whoWeAre = getWhoWeAre();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 mt-20 relative">
+<main class="flex-grow bg-white py-12 px-4  relative">
     <!-- Background Image with Gradient Overlay (Hidden on Large Screens) -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#d1b2b2]/90 to-transparent md:hidden">
         <img 

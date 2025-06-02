@@ -5,7 +5,7 @@ $welcome = getWelcomeMessage();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 text-center mt-20">
+<main class="flex-grow bg-white py-12 px-4 text-center ">
 
     <!-- Welcome Message Section -->
     <section class="py-16">

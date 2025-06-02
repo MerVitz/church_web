@@ -5,7 +5,7 @@ echo "<script>console.log('Current Page: $current_page');</script>";
 $ministries = getMinistries();
 ?>
 <!-- Main Content -->
-<main class="flex-grow bg-[#f0e6e6] py-12 px-4 text-center mt-20">
+<main class="flex-grow bg-[#f0e6e6] py-12 px-4 text-center ">
     <div class="container mx-auto px-6 md:px-12">
         <h2 class="text-4xl font-bold text-[#660000] mb-12">Our Ministries</h2>
         <p class="text-gray-700 mb-8 text-lg">

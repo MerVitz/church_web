@@ -8,7 +8,7 @@ $galleries = getGallery();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 text-center mt-20 relative bg-cover bg-center bg-fixed" style="background-image: url('public/images/resources.jpg');">
+<main class="flex-grow bg-white py-12 px-4 text-center  relative bg-cover bg-center bg-fixed" style="background-image: url('public/images/resources.jpg');">
     <!-- Translucent Overlay -->
     <div class="absolute inset-0 bg-[#efe5e5] bg-opacity-60"></div>
 

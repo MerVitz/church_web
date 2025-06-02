@@ -16,7 +16,7 @@ function getContactInfo() {
  */
 function getGivingOfferings() {
     global $conn;
-    $stmt = $conn->prepare("SELECT till_number, assistance_phone FROM giving_offerings LIMIT 1");
+    $stmt = $conn->prepare("SELECT paybill, assistance_phone FROM giving_offerings LIMIT 1");
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }

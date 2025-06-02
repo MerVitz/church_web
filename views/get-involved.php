@@ -3,7 +3,7 @@ $pageTitle = "Get Involved";
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-[#d1b3b3] z-0 py-12 px-4 text-center mt-20 relative">
+<main class="flex-grow bg-[#d1b3b3] z-0 py-12 px-4 text-center  relative">
     <div class="absolute inset-0 bg-[#efe5e5] opacity-40"></div>
     <div class="relative z-1 max-w-4xl mx-auto text-white">
         <h2 class="text-4xl font-bold mb-6">Get Involved</h2>

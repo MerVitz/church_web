@@ -5,7 +5,7 @@ $history = getHistory();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 mt-20">
+<main class="flex-grow bg-white py-12 px-4 ">
     <h2 class="text-4xl font-bold text-[#660000] text-center mb-6">History of the Anglican Church of Kenya</h2>
     <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
         Explore the journey of our church through the years, from humble beginnings to a thriving community of faith and service.

@@ -5,7 +5,7 @@ $leaders = getAdministrationLeaders();
 ?>
 
 <!-- Administration Section -->
-<main class="flex-grow bg-white py-12 px-4 text-center mt-20">
+<main class="flex-grow bg-white py-12 px-4 text-center ">
     <h2 class="text-4xl font-bold text-[#660000] text-center mb-6">Administration</h2>
     <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
         Meet our dedicated leaders who guide and manage the Anglican Church of Kenya. 

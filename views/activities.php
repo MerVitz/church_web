@@ -6,7 +6,7 @@ $activities = getActivities();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-white py-12 px-4 mt-20">
+<main class="flex-grow bg-white py-12 px-4 ">
     <h2 class="text-4xl font-bold text-[#660000] text-center mb-6">Activities</h2>
     <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
         Stay updated on our recent and upcoming events as we continue to grow in faith and community service.

@@ -3,7 +3,7 @@ $pageTitle = "Prayer Line";
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-[#f9f4f4] py-12 px-4 text-center mt-20">
+<main class="flex-grow bg-[#f9f4f4] py-12 px-4 text-center ">
 
     <!-- Header Section -->
     <h2 class="text-3xl font-bold mb-4 text-[#660000]">Prayer Line</h2>
