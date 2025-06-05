@@ -9,7 +9,7 @@ body {
 
 /* Custom shadow for elements */
 .custom-shadow {
-    box-shadow: 0 4px 6px rgba(102, 0, 0, 0.5);
+        box-shadow: 0 4px 6px rgba(108, 139, 201, 0.5);
 }
 
 /* ===================================== */
@@ -275,19 +275,20 @@ iframe {
     transform: rotateX(70deg) translateZ(50px);
     animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
     box-shadow: 0px 0px 15px #d4963a,
-                inset 0px 0px 15px #3d0000;
+                inset 0px 0px 15px #6C8BC9;
 }
 
 @keyframes my-move {
     0%, 100% {
         transform: rotateX(70deg) translateZ(50px) translateY(0px);
         border-color: #d4963a;
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8),
-                    inset 0px 0px 15px rgb(104, 39, 39);
+        box-shadow: 
+            0px 0px 20px rgba(108, 139, 201, 0.5),
+            inset 0px 0px 15px rgba(108, 139, 201, 0.6);
     }
     50% {
         transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
-        border-color: rgb(121, 2, 2);
+        border-color: rgb(108, 139, 201);
         box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8),
                     inset 0px 0px 15px #d4963a;
     }

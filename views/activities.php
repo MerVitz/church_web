@@ -7,10 +7,15 @@ $activities = getActivities();
 
 <!-- Main Content -->
 <main class="flex-grow bg-[#ffffff] py-8 px-4">
-    <h2 class="text-4xl font-bold text-[#6C8BC9] text-center mb-6">Activities</h2>
-    <p class="text-lg text-black text-center max-w-2xl mx-auto mb-12">
-        Stay updated on our recent and upcoming events as we continue to grow in faith and community service.
-    </p>
+    <!-- Header Section -->
+    <div class="mb-12 max-w-4xl mx-auto text-center md:text-left px-4">
+        <h2 class="text-[28px] font-normal text-black tracking-wide mb-2 uppercase">
+            Activities
+        </h2>
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+            Stay updated on our <span class="text-[#D18C7C] font-medium">recent and upcoming events</span> as we continue growing in faith and community service.
+        </p>
+    </div>
 
     <!-- Upcoming Events Section -->
     <section class="mb-12">
@@ -42,21 +47,23 @@ $activities = getActivities();
 
     <!-- Periodic Activities Section -->
     <section>
-        <h3 class="text-3xl font-semibold text-center text-[#6C8BC9] mb-8">Periodic Activities</h3>
+        <h3 class="text-xl md:text-2xl font-medium text-black mb-6">
+            Periodic Activities
+        </h3>
 
-        <div class="container mx-auto space-y-16">
+        <div class="space-y-20">
             <?php $reverse = false; ?>
             <?php foreach ($activities as $activity): ?>
-                <div class="flex flex-col md:flex-row<?= $reverse ? '-reverse' : ''; ?> items-center">
-                    <div class="md:w-1/2">
-                        <img src="<?= $activity['image'] ?>" alt="<?= $activity['name'] ?>" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    </div>
-                    <div class="md:w-1/2 md:<?= $reverse ? 'pr' : 'pl'; ?>-12 text-left animate-fadeIn">
-                        <h3 class="text-3xl font-semibold text-[#6C8BC9]"><?= $activity['name'] ?></h3>
-                        <p class="text-black mt-4"><?= $activity['description'] ?></p>
-                    </div>
+            <div class="flex flex-col md:flex-row<?= $reverse ? '-reverse' : '' ?> items-center gap-6">
+                <div class="md:w-1/2">
+                    <img src="<?= $activity['image'] ?>" alt="<?= $activity['name'] ?>" class="rounded-lg shadow-lg h-64 w-full object-cover">
                 </div>
-                <?php $reverse = !$reverse; ?>
+                <div class="md:w-1/2 md:<?= $reverse ? 'pr' : 'pl' ?>-12">
+                    <h4 class="text-lg font-medium text-[#6C8BC9]"><?= $activity['name'] ?></h4>
+                    <p class="text-gray-700 mt-4 leading-relaxed"><?= $activity['description'] ?></p>
+                </div>
+            </div>
+            <?php $reverse = !$reverse; ?>
             <?php endforeach; ?>
         </div>
     </section>

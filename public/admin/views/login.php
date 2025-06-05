@@ -28,10 +28,12 @@ function generateCsrfToken() {
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/public/css/index.css">
 </head>
-<body class="h-screen flex justify-center items-center bg-gradient-to-r from-[#3d0000] to-[#ffffff]">
-<a href="/" class="absolute top-2 left-2 px-3 py-1 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition">
-        ← Back to Home
-</a>
+<body class="h-screen flex justify-center items-center bg-gradient-to-r from-[#6C8BC9] to-[#D18C7C] relative">
+
+  <!-- Back to Home -->
+  <a href="/" class="absolute top-4 left-4 px-3 py-1 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition">
+    ← Back to Home
+  </a>
 
 <?php if (!empty($message)) : ?>
     <div class="bg-red-500 text-white p-3 rounded-lg mb-4">
@@ -83,10 +85,16 @@ function generateCsrfToken() {
         <!-- CSRF Token -->
         <input type="hidden" name="csrf_token" value="<?= generateCsrfToken(); ?>">
 
-        <!-- Submit Button -->
+<!-- Enhanced Submit Button -->
         <button type="submit" 
-                class="w-full py-2 bg-[#d4963a] text-white font-semibold rounded-lg hover:bg-[#b37d2a] transition">
-            Login
+        class="w-full py-3 px-6 bg-gradient-to-r from-[#6C8BC9] to-[#D18C7C] text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
+        <span class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2.003 5.884l8 4.8a1 1 0 001.004 0l8-4.8A1 1 0 0018.999 4H1a1 1 0 001.003 1.884z" />
+            <path d="M19 8.118l-7.997 4.797a1 1 0 01-1.006 0L3 8.118V14a1 1 0 001 1h12a1 1 0 001-1V8.118z" />
+            </svg>
+            <span>Login</span>
+        </span>
         </button>
     </form>
 

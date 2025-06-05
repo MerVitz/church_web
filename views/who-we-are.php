@@ -1,25 +1,14 @@
 <?php 
 $pageTitle = "Who We Are"; 
 include_once "includes/models.php"; 
-// Fetch Who We Are data
 $whoWeAre = getWhoWeAre();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-[#ffffff] py-8 px-4 relative">
-    <!-- Background Image with Gradient Overlay (Hidden on Large Screens) -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#6C8BC9]/90 to-transparent md:hidden">
-        <img 
-            src="<?= htmlspecialchars($whoWeAre['image_url'] ?? 'public/images/default.jpg'); ?>" 
-            alt="Church Community" 
-            class="w-full h-full object-cover opacity-20"
-        >
-    </div>
-
-    <!-- Content Section -->
-    <div class="relative container mx-auto text-left md:flex items-center">
+<main class="flex-grow py-8 px-4 bg-white bg-[url('<?= htmlspecialchars($whoWeAre['image_url'] ?? 'public/images/default.jpg'); ?>')] bg-cover bg-center bg-no-repeat md:bg-none">
+    <div class="container mx-auto text-left md:flex items-center bg-white/90 md:bg-transparent p-6 rounded-lg shadow-lg">
         <!-- Text Section -->
-        <div class="md:w-1/2 px-6">
+        <div class="md:w-1/2">
             <h2 class="text-4xl font-bold text-[#6C8BC9] mb-6">
                 <?= htmlspecialchars($whoWeAre['title'] ?? 'Who We Are'); ?>
             </h2>
@@ -31,7 +20,7 @@ $whoWeAre = getWhoWeAre();
             </a>
         </div>
 
-        <!-- Image Section (Visible on Large Screens) -->
+        <!-- Image Section (Large screens only) -->
         <div class="hidden md:block md:w-1/2 px-6">
             <img 
                 src="<?= htmlspecialchars($whoWeAre['image_url'] ?? 'public/images/default.jpg'); ?>" 

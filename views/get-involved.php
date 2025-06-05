@@ -3,82 +3,78 @@ $pageTitle = "Get Involved";
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-[#ffffff] z-0 py-8 px-4 text-center relative">
-    <div class="absolute inset-0 bg-[#ffffff] opacity-40"></div>
-    <div class="relative z-1 max-w-4xl mx-auto text-black">
-        <h2 class="text-4xl font-bold text-[#6C8BC9] mb-6">Get Involved</h2>
-        <p class="text-lg text-black mb-12 max-w-2xl mx-auto">
+<main class="flex-grow bg-white py-16 px-4 text-center relative">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl text-[#6C8BC9] font-bold mb-4 uppercase tracking-wide">Get Involved</h2>
+        <p class="text-lg text-black max-w-2xl mx-auto mb-14">
             Discover meaningful ways to participate and contribute to our church community. Whether through giving, serving, or praying, there's a place for everyone to make a difference.
         </p>
     </div>
 
-    <div class="relative z-10 container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-        
-        <!-- Become a Member -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/members.png" alt="Become a Member" class="w-16 h-16 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Become a Member</h3>
-            <p class="text-black mt-4">
-                Join our church family and be part of a loving, faith-filled community. As a member, you will grow spiritually, connect with others, and actively participate in the life of our church.
+    <!-- Involvement Options -->
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 container mx-auto text-left">
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/members.png" alt="Become a Member" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Become a Member</h3>
+            <p class="text-black text-sm mb-4">
+                Join our church family and be part of a loving, faith-filled community. Grow spiritually and connect with others in meaningful ways.
             </p>
-            <a href="/?page=become-member" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">Join Now →</a>
+            <a href="/?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join Now →</a>
         </div>
 
-        <!-- Support by Giving -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/giving-icon.png" alt="Giving" class="w-20 h-20 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Support by Giving</h3>
-            <p class="text-black mt-4">
-                Your generous contributions help sustain our ministries, support the needy, and expand our outreach efforts. Every gift, no matter the size, makes an impact.
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/giving-icon.png" alt="Giving" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Support by Giving</h3>
+            <p class="text-black text-sm mb-4">
+                Your contributions support ministries, missions, and community outreach. Every gift counts and creates impact.
             </p>
-            <a href="#giving" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">Give Now →</a>
+            <a href="#giving" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Give Now →</a>
         </div>
 
-        <!-- Go on Mission -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/mission-icon.png" alt="Mission" class="w-16 h-16 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Go on Mission</h3>
-            <p class="text-black mt-4">
-                Join us in reaching communities locally and globally, spreading the love of Christ through mission trips, evangelism, and community service projects.
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/mission-icon.png" alt="Go on Mission" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Go on Mission</h3>
+            <p class="text-black text-sm mb-4">
+                Join mission trips and outreach programs to serve communities and share God’s love beyond the church walls.
             </p>
-            <a href="/?page=become-member" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">Join a Mission →</a>
+            <a href="/?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join a Mission →</a>
         </div>
 
-        <!-- Join Our Ministries -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/ministries-icon.png" alt="Ministries" class="w-16 h-16 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Join Our Ministries</h3>
-            <p class="text-black mt-4">
-                Whether it's the worship team, youth ministry, or outreach programs, there's a place for you to serve using your unique gifts and talents.
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/departments-icon.png" alt="Departments" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Join Our Departments</h3>
+            <p class="text-black text-sm mb-4">
+                Use your skills and passions in ministry. There’s a place for everyone in our various departments.
             </p>
-            <a href="/?page=ministries" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">Explore Ministries →</a>
+            <a href="/?page=departments" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Explore Departments →</a>
         </div>
 
-        <!-- Pray for the Ministry -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/prayer-icon.png" alt="Prayer" class="w-16 h-16 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Pray for the Ministry</h3>
-            <p class="text-black mt-4">
-                We believe in the power of prayer. Join us in lifting our leaders, missionaries, and community in prayer as we seek God's guidance and blessings.
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/prayer-icon.png" alt="Prayer" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Pray for the Ministry</h3>
+            <p class="text-black text-sm mb-4">
+                Intercede for our church, leaders, and community. Your prayers bring strength, clarity, and growth.
             </p>
-            <button onclick="openJoinModal('Prayer Team')" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">Join Prayer Team →</button>
+            <button onclick="openJoinModal('Prayer Team')" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join Prayer Team →</button>
         </div>
 
-        <!-- Attend Our Events -->
-        <div class="p-8 bg-[#ffffff] bg-opacity-90 rounded-lg shadow-lg">
-            <img src="public/images/events-icon.png" alt="Events" class="w-16 h-16 mb-4 mx-auto">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9]">Attend Our Events</h3>
-            <p class="text-black mt-4">
-                Stay connected by attending our church events, worship services, and special programs. There's always something for everyone to enjoy and grow in faith.
+        <!-- ITEM -->
+        <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
+            <img src="public/images/events-icon.png" alt="Events" class="w-16 h-16 mb-6 mx-auto">
+            <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Attend Our Events</h3>
+            <p class="text-black text-sm mb-4">
+                Engage with others through worship, seminars, and fellowships designed to uplift and inspire.
             </p>
-            <a href="/?page=activities" class="mt-4 inline-block text-[#6C8BC9] font-bold hover:text-[#D18C7C]">View Events →</a>
-        </div>
-    </div>
-    <div id="message-wrapper" class="fixed inset-0 z-[100000] pointer-events-none flex items-start justify-center">
-        <div id="response-message" class="mt-5">
+            <a href="/?page=activities" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">View Events →</a>
         </div>
     </div>
 </main>
+
 
     <!-- Join Prayer Team Modal -->
 <div id="joinModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50 hidden">

@@ -37,7 +37,7 @@ $notices = getNotices()
 <!-- Vision, Mission, Core Values Section -->
 <section class="py-8 bg-[#ffffff] text-center">
     <div class="container mx-auto px-6 md:px-12">
-        <h2 class="text-4xl font-bold text-[#6C8BC9] mb-12">Our Vision, Mission & Core Values</h2>
+        <h2 class="text-4xl font-bold text-[#000000] mb-12">Our Vision, Mission & Core Values</h2>
         
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Mission -->
@@ -77,11 +77,11 @@ $notices = getNotices()
                 <!-- Slogan Content -->
                 <div class="ml-6 border-l-4 border-[#6C8BC9] pl-6 text-left">
                     <h3 class="text-3xl font-bold text-[#6C8BC9] mb-4"><?= htmlspecialchars($visionMissionSlogan[2]['title']) ?></h3>
-                    <div class="p-6 rounded-lg bg-gradient-to-r from-[#ffffff] to-[#6C8BC9]/20 shadow-lg">
-                        <p class="text-2xl md:text-3xl font-semibold italic text-black leading-relaxed">
-                            <span class="text-4xl md:text-5xl font-bold">“</span> 
+                    <div class="p-6 rounded-lg bg-gradient-to-r from-white via-[#D18C7C]/10 to-[#6C8BC9]/10 shadow-lg">
+                        <p class="text-2xl md:text-3xl font-semibold italic leading-relaxed text-black">
+                            <span class="text-[#D18C7C] text-5xl font-bold">“</span> 
                             <?= htmlspecialchars($visionMissionSlogan[2]['content']) ?>
-                            <span class="text-4xl md:text-5xl font-bold">”</span>
+                            <span class="text-[#6C8BC9] text-5xl font-bold">”</span>
                         </p>
                     </div>
                 </div>

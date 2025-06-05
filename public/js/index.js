@@ -1,6 +1,20 @@
-function openJoinModal(ministry) {
-    document.getElementById("ministryName").value = ministry;
-    document.getElementById("joinModal").classList.remove("hidden");
+function openJoinModal(department) {
+  const deptInput = document.getElementById("departmentName");
+  const modalTitle = document.getElementById("modalTitle");
+  const dropdownWrapper = document.getElementById("fellowshipDropdownWrapper");
+
+  // Show modal
+  document.getElementById("joinModal").classList.remove("hidden");
+
+  deptInput.value = department;
+  deptInput.readOnly = true;
+  modalTitle.innerText = `Join ${department}`;
+
+  if (department === "Scheme Fellowships") {
+    dropdownWrapper.classList.remove("hidden");
+  } else {
+    dropdownWrapper.classList.add("hidden");
+  }
 }
 
 function closeJoinModal() {

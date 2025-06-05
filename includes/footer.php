@@ -17,12 +17,34 @@ $socials = getSocialLinks();
         <div class="grid md:grid-cols-4 gap-8 mb-8">
             
             <!-- Contact Information -->
-            <div class="text-left">
-                <h3 class="text-2xl font-semibold text-[#6C8BC9] mb-4">Contact Us</h3>
-                <p class="mb-2 text-black"><strong>Location:</strong> <?= htmlspecialchars($contact['location']) ?></p>
-                <p class="mb-2 text-black"><strong>Phone:</strong> <?= htmlspecialchars($contact['phone']) ?></p>
-                <p class="text-black"><strong>Email:</strong> <?= htmlspecialchars($contact['email']) ?></p>
+            <div class="text-left space-y-4">
+                <h3 class="text-2xl font-semibold text-[#000000] mb-4">Contact Us</h3>
+
+                <!-- Location -->
+                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
+                    <img src="public/icons/location.svg" alt="Location" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
+                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                        <?= htmlspecialchars($contact['location']) ?>
+                    </span>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
+                    <img src="public/icons/phone.svg" alt="Phone" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
+                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                        <?= htmlspecialchars($contact['phone']) ?>
+                    </span>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
+                    <img src="public/icons/email.svg" alt="Email" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
+                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                        <?= htmlspecialchars($contact['email']) ?>
+                    </span>
+                </div>
             </div>
+
 
             <!-- Giving & Offerings -->
             <div id="giving" class="bg-white p-6 rounded-lg shadow-md border border-[#6C8BC9] text-center">
@@ -44,27 +66,45 @@ $socials = getSocialLinks();
 
             <!-- Quick Links -->
             <div class="text-left">
-                <h3 class="text-2xl font-semibold text-[#6C8BC9] mb-4">Quick Links</h3>
-                <ul class="grid grid-cols-2 gap-2 text-sm sm:text-base">
-                    <li><a href="/?page=home" class="text-black hover:text-[#D18C7C]">Home</a></li>
-                    <li><a href="/?page=who-we-are" class="text-black hover:text-[#D18C7C]">Who We Are</a></li>
-                    <li><a href="/?page=history" class="text-black hover:text-[#D18C7C]">History</a></li>
-                    <li><a href="/?page=administration" class="text-black hover:text-[#D18C7C]">Administration</a></li>
-                    <li><a href="/?page=governance" class="text-black hover:text-[#D18C7C]">Governance</a></li>
-                    <li><a href="/?page=ministries" class="text-black hover:text-[#D18C7C]">Ministries</a></li>
-                    <li><a href="/?page=activities" class="text-black hover:text-[#D18C7C]">Activities</a></li>
-                    <li><a href="/?page=resources" class="text-black hover:text-[#D18C7C]">Resources</a></li>
-                    <li><a href="/?page=get-involved" class="text-black hover:text-[#D18C7C]">Get Involved</a></li>
-                    <li><a href="/?page=contact-us" class="text-black hover:text-[#D18C7C]">Contact Us</a></li>
-                    <li><a href="/?page=become-member" class="text-black hover:text-[#D18C7C]">Join Us</a></li>
-                    <li><a href="/?page=prayer-line" class="text-black hover:text-[#D18C7C]">Prayer Line</a></li>
+                <h3 class="text-2xl font-semibold text-[#000000] mb-4">Quick Links</h3>
+                <ul class="grid grid-cols-2 gap-3 text-sm sm:text-base">
+                    <?php
+                        $links = [
+                            ['href' => '/?page=home', 'text' => 'Home'],
+                            ['href' => '/?page=who-we-are', 'text' => 'Who We Are'],
+                            ['href' => '/?page=history', 'text' => 'History'],
+                            ['href' => '/?page=administration', 'text' => 'Administration'],
+                            ['href' => '/?page=governance', 'text' => 'Governance'],
+                            ['href' => '/?page=departments', 'text' => 'Departments'],
+                            ['href' => '/?page=activities', 'text' => 'Activities'],
+                            ['href' => '/?page=resources', 'text' => 'Resources'],
+                            ['href' => '/?page=get-involved', 'text' => 'Get Involved'],
+                            ['href' => '/?page=contact-us', 'text' => 'Contact Us'],
+                            ['href' => '/?page=become-member', 'text' => 'Join Us'],
+                            ['href' => '/?page=prayer-line', 'text' => 'Prayer Line'],
+                        ];
+
+                        foreach ($links as $link) {
+                            echo '
+                            <li>
+                                <a href="' . $link['href'] . '" class="group flex items-center gap-2 p-1 rounded-md text-black hover:text-[#6C8BC9] hover:bg-[#6C8BC9]/10 transition duration-300 ease-in-out transform hover:scale-[1.03]">
+                                    <img src="public/icons/bx-link.svg" alt="Link Icon" class="w-4 h-4 transition duration-300 ease-in-out group-hover:scale-110 group-hover:brightness-110" />
+                                    <span class="transition-colors duration-300">' . $link['text'] . '</span>
+                                </a>
+                            </li>
+                                    ';
+                        }
+                    ?>
                 </ul>
             </div>
+
+
+
         </div>
 
         <!-- Social Media Links -->
         <div class="text-center mt-6">
-            <h3 class="text-2xl font-semibold text-[#6C8BC9] mb-4">Follow Us</h3>
+            <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
             <div class="flex justify-center space-x-4">
                 <?php foreach ($socials as $social): ?>
                     <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" class="text-black hover:text-[#D18C7C]">

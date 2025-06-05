@@ -123,11 +123,11 @@ function getHistory() {
 
 
 /**
- * Fetch all ministries.
+ * Fetch all departments.
  */
-function getMinistries() {
+function getDepartments() {
     global $conn;
-    return $conn->query("SELECT * FROM ministries ORDER BY id ASC")->fetchAll();
+    return $conn->query("SELECT * FROM departments ORDER BY id ASC")->fetchAll();
 }
 
 
@@ -246,22 +246,22 @@ function handleContactSubmission() {
 
 
 /**
- * Handles ministry application form submission
+ * Handles department application form submission
  * @return string JSON response
  */
-function handleMinistryApplication() {
+function handleDepartmentApplication() {
     global $conn;
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["ministry_application"])) {
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["department_application"])) {
         $fullName = trim($_POST["fullName"]);
         $email = trim($_POST["emailJoin"]);
         $phone = trim($_POST["phoneJoin"]);
-        $ministryName = trim($_POST["ministryName"]);
+        $departmentName = trim($_POST["departmentName"]);
 
         try {
-            // Insert into `ministry_applications` table
-            $stmt = $conn->prepare("INSERT INTO ministry_applications (full_name, email, phone, ministry_name) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$fullName, $email, $phone, $ministryName]);
+            // Insert into `department_applications` table
+            $stmt = $conn->prepare("INSERT INTO department_applications (full_name, email, phone, department_name) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$fullName, $email, $phone, $departmentName]);
 
             echo json_encode(["status" => "success", "message" => "Your request has been received successfully."]);
             exit();
@@ -305,7 +305,7 @@ function handlePrayerRequest() {
 
 // Call the functions to process the requests
 handlePrayerRequest();
-handleMinistryApplication();
+handleDepartmentApplication();
 handleContactSubmission();
 handleMembershipSubmission();
 ?>

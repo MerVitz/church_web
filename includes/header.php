@@ -51,7 +51,7 @@ $contact = getContactInfo();
 </div>
 
 <!-- Header & Navigation -->
-<header class="bg-[#ffffff] shadow-md">
+<header class=" z-50 bg-[#D18C7C]/30 backdrop-blur-sm shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <!-- Logo & Title -->
         <div class="flex items-center">
@@ -60,7 +60,7 @@ $contact = getContactInfo();
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:block">
+        <nav class="relative z-50 hidden lg:block">
             <ul class="flex space-x-4 items-center">
                 <li><a href="/?page=home" class="<?= $current_page == 'home' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Home</a></li>
                 
@@ -71,11 +71,10 @@ $contact = getContactInfo();
                         <li><a href="/?page=history" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">History</a></li>
                         <li><a href="/?page=administration" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Administration</a></li>
                         <li><a href="/?page=governance" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Governance</a></li>
+                        <li><a href="/?page=departments" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Departments</a></li>
+                        <li><a href="/?page=activities" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Activities</a></li>
                     </ul>
                 </li>
-
-                <li><a href="/?page=ministries" class="<?= $current_page == 'ministries' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Ministries</a></li>
-                <li><a href="/?page=activities" class="<?= $current_page == 'activities' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Activities</a></li>
                 <li><a href="/?page=resources" class="<?= $current_page == 'resources' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Resources</a></li>
                 <li><a href="/?page=get-involved" class="<?= $current_page == 'get-involved' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Get Involved</a></li>
                 <li><a href="/?page=contact-us" class="<?= $current_page == 'contact-us' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Contact</a></li>
@@ -120,10 +119,10 @@ $contact = getContactInfo();
                     <li><a href="/?page=history" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">History</a></li>
                     <li><a href="/?page=administration" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Administration</a></li>
                     <li><a href="/?page=governance" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Governance</a></li>
+                    <li><a href="/?page=departments" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Departments</a></li>
+                    <li><a href="/?page=activities" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Activities</a></li>
                 </ul>
             </li>
-            <li><a href="/?page=ministries" class="hover:text-[#D18C7C]">Ministries</a></li>
-            <li><a href="/?page=activities" class="hover:text-[#D18C7C]">Activities</a></li>
             <li><a href="/?page=resources" class="hover:text-[#D18C7C]">Resources</a></li>
             <li><a href="/?page=get-involved" class="hover:text-[#D18C7C]">Get Involved</a></li>
             <li><a href="/?page=contact-us" class="hover:text-[#D18C7C]">Contact</a></li>

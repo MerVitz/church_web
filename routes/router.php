@@ -23,9 +23,9 @@ switch ($page) {
         $pageTitle = "Governance";
         include "views/governance.php";
         break;
-    case 'ministries':
+    case 'departments':
         $pageTitle = "Ministries";
-        include "views/ministries.php";
+        include "views/departments.php";
         break;
     case 'activities':
         $pageTitle = "Activities";
