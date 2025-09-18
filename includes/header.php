@@ -51,7 +51,8 @@ $contact = getContactInfo();
 </div>
 
 <!-- Header & Navigation -->
-<header class="bg-[#D18C7C]/30 lg:bg-[#D18C7C]/30 lg:backdrop-blur-sm shadow-md">
+<header class="bg-[#D18C7C]/30 lg:bg-[#D18C7C]/30 lg:backdrop-blur-sm shadow-md relative z-[9999]">
+
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <!-- Logo & Title -->
         <div class="flex items-center">
@@ -62,10 +63,18 @@ $contact = getContactInfo();
         <!-- Desktop Navigation -->
         <nav class="hidden lg:block">
             <ul class="flex space-x-4 items-center">
-                <li><a href="/?page=home" class="<?= $current_page == 'home' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Home</a></li>
-                
+                <li>
+                    <a href="/?page=home" 
+                    class="text-base leading-normal <?= $current_page == 'home' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">
+                        Home
+                    </a>
+                </li>
+
                 <li class="group relative">
-                    <button id="about-btn" class="text-black hover:text-[#6C8BC9] focus:outline-none">About</button>
+                    <button id="about-btn" 
+                            class="text-base leading-normal text-black hover:text-[#6C8BC9] focus:outline-none">
+                        About
+                    </button>
                     <ul id="about-dropdown" class="absolute left-0 mt-2 hidden bg-white shadow-md p-2 space-y-2">
                         <li><a href="/?page=who-we-are" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Who We Are</a></li>
                         <li><a href="/?page=history" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">History</a></li>
@@ -75,14 +84,37 @@ $contact = getContactInfo();
                         <li><a href="/?page=activities" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Activities</a></li>
                     </ul>
                 </li>
-                <li><a href="/?page=resources" class="<?= $current_page == 'resources' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Resources</a></li>
-                <li><a href="/?page=get-involved" class="<?= $current_page == 'get-involved' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Get Involved</a></li>
-                <li><a href="/?page=contact-us" class="<?= $current_page == 'contact-us' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Contact</a></li>
-                <li><a href="/?page=become-member" class="<?= $current_page == 'become-member' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Join</a></li>
-                
+
+                <li>
+                    <a href="/?page=resources" 
+                    class="text-base leading-normal <?= $current_page == 'resources' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">
+                    Resources
+                    </a>
+                </li>
+                <li>
+                    <a href="/?page=get-involved" 
+                    class="text-base leading-normal <?= $current_page == 'get-involved' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">
+                    Get Involved
+                    </a>
+                </li>
+                <li>
+                    <a href="/?page=contact-us" 
+                    class="text-base leading-normal <?= $current_page == 'contact-us' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">
+                    Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="/?page=become-member" 
+                    class="text-base leading-normal <?= $current_page == 'become-member' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">
+                    Join
+                    </a>
+                </li>
+
                 <!-- Admin Login -->
                 <li class="relative flex items-center">
-                    <a href="/?page=admin-login" class="text-black text-sm hover:text-[#6C8BC9]">Admin</a>
+                    <a href="/?page=admin-login" class="text-base leading-normal text-black hover:text-[#6C8BC9]">
+                        Admin
+                    </a>
                     <span class="relative flex ml-1">
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6C8BC9] opacity-75"></span>
                         <span class="relative inline-flex h-2 w-2 bg-[#6C8BC9] rounded-full"></span>
@@ -90,6 +122,7 @@ $contact = getContactInfo();
                 </li>
             </ul>
         </nav>
+
 
         <!-- Mobile Menu Toggle -->
         <button class="lg:hidden text-[#6C8BC9]" id="menu-toggle">

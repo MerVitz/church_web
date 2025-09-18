@@ -8,12 +8,10 @@ $galleries = getGallery();
 ?>
 
 <!-- Main Content -->
-<main class="flex-grow bg-[#ffffff] py-8 px-4 text-center relative bg-cover bg-center bg-fixed" style="background-image: url('public/images/resources.jpg');">
-    <!-- Translucent Overlay -->
-    <div class="absolute inset-0 bg-[#ffffff] bg-opacity-60"></div>
+<main class="flex-grow bg-cover bg-center bg-fixed py-8 px-4 text-center relative z-0"
+      style="background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('public/images/resources.jpg');">
+    <div  class="relative">   
 
-    <!-- Content Wrapper -->
-    <div class="relative">
         <!-- YouTube Video Previews (Carousel style) -->
         <div class="mb-12">
             <h3 class="text-2xl font-semibold text-[#6C8BC9] mb-4">Watch Our Latest Sermons</h3>
@@ -144,7 +142,6 @@ $galleries = getGallery();
                 <?php endforeach; ?>
             </div>
         </section>
-    </div>
 </main>
 
 <script>

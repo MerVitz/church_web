@@ -126,10 +126,10 @@ $notices = getNotices()
             </div>
 
             <div class="bg-[#ffffff] bg-opacity-90 shadow-lg rounded-lg p-8 text-black">
-                <h3 class="text-3xl font-bold text-[#6C8BC9] mb-6 text-center">Our Weekly Services</h3>
+                <h3 class="text-2xl text-[#6C8BC9] mb-4">Our Weekly Services</h3>
                 <div class="divide-y divide-[#6C8BC9]/30">
                     <div class="py-4">
-                        <h4 class="text-xl font-semibold text-[#6C8BC9]">Sunday</h4>
+                        <h4 class="text-xl text-[#6C8BC9]">Sunday</h4>
                         <ul class="mt-2 text-black">
                             <li class="mt-1">6:00 AM - 7:00 AM: Morning Devotion</li>
                             <li class="mt-1">7:00 AM - 9:00 AM: 1st Service</li>
@@ -140,14 +140,14 @@ $notices = getNotices()
                     </div>
 
                     <div class="py-4">
-                        <h4 class="text-xl font-semibold text-[#6C8BC9]">Tuesday</h4>
+                        <h4 class="text-xl text-[#6C8BC9]">Tuesday</h4>
                         <ul class="mt-2 text-black">
                             <li class="mt-1">5:00 PM - 6:00 PM: Intercessory Prayers</li>
                         </ul>
                     </div>
 
                     <div class="py-4">
-                        <h4 class="text-xl font-semibold text-[#6C8BC9]">Wednesday (Midweek Service)</h4>
+                        <h4 class="text-xl text-[#6C8BC9]">Wednesday (Midweek Service)</h4>
                         <ul class="mt-2 text-black">
                             <li class="mt-1">6:30 AM - 7:30 AM: Morning Service</li>
                             <li class="mt-1">5:30 PM - 6:30 PM: Evening Service</li>
@@ -155,7 +155,7 @@ $notices = getNotices()
                     </div>
 
                     <div class="py-4">
-                        <h4 class="text-xl font-semibold text-[#6C8BC9]">Friday</h4>
+                        <h4 class="text-xl text-[#6C8BC9]">Friday</h4>
                         <ul class="mt-2 text-black">
                             <li class="mt-1">6:00 PM - 7:00 PM: Youth Fellowship</li>
                         </ul>
@@ -165,13 +165,37 @@ $notices = getNotices()
         </div>
 
         <!-- Flowing Notices Section -->
-        <div class="bg-[#6C8BC9] text-white py-6 px-6 md:px-12 w-full overflow-hidden relative mt-12">
+        <div class="bg-[#6C8BC9]/70 py-8 px-6 md:px-12 w-full overflow-hidden relative mt-12 rounded-xl">
             <div id="marquee-container" class="relative w-full flex justify-center">
                 <div id="carousel" class="relative w-[1200px] overflow-hidden">
                     <div id="carousel-inner" class="flex space-x-6">
                         <?php foreach ($notices as $notice): ?>
-                            <div class="carousel-item bg-[#ffffff] text-black px-6 py-3 rounded-lg shadow-md text-lg font-semibold min-w-[280px] max-w-[280px] text-center whitespace-normal hover:bg-[#D18C7C] hover:text-white transition">
-                                <?php echo nl2br(htmlspecialchars($notice['notice_text'])); ?>
+                            <div class="carousel-item 
+                                        bg-white 
+                                        text-black 
+                                        rounded-3xl 
+                                        shadow-xl 
+                                        min-w-[280px] max-w-[280px] 
+                                        text-center flex flex-col justify-center items-center
+                                        transition duration-300 ease-in-out
+                                        hover:scale-105 hover:shadow-2xl hover:bg-[#e1f0ff]
+                                        relative">
+
+                                <!-- Notice Header with Icon -->
+                                <div class="flex items-center justify-center gap-2 mb-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6C8BC9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m0-4h.01M12 20h.01M12 4v1m0 14v1M20 12h-1m-14 0H4m16.364-4.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707M17.657 17.657l.707.707" />
+                                    </svg>
+                                    <span class="font-semibold text-[#6C8BC9] text-base">Notice</span>
+                                </div>
+
+                                <!-- Notice Text -->
+                                <p class="text-sm font-light leading-relaxed px-2">
+                                    <?php echo nl2br(htmlspecialchars($notice['notice_text'])); ?>
+                                </p>
+
+                                <!-- Bottom Accent Line -->
+                                <div class="mt-4 w-12 h-1 bg-[#6C8BC9] rounded-full"></div>
                             </div>
                         <?php endforeach; ?>
                     </div>

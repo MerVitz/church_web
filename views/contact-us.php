@@ -7,6 +7,7 @@ $contact = getContactInfo();
 
 <!-- Main Content -->
 <main class="flex-grow bg-[#ffffff] py-8 px-4 text-center">
+    
     <h2 class="text-4xl font-bold text-[#6C8BC9] mb-6">Contact Us</h2>
     <p class="text-black mb-12 text-lg">Reach out to us for any inquiries or assistance.</p>
 

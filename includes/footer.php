@@ -97,22 +97,24 @@ $socials = getSocialLinks();
                     ?>
                 </ul>
             </div>
-
-
-
         </div>
 
-        <!-- Social Media Links -->
-        <div class="text-center mt-6">
-            <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
-            <div class="flex justify-center space-x-4">
-                <?php foreach ($socials as $social): ?>
-                    <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" class="text-black hover:text-[#D18C7C]">
-                        <img src="<?= htmlspecialchars($social['icon']) ?>" alt="<?= htmlspecialchars($social['platform']) ?>" class="w-10 h-10">
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
+<!-- Social Media Links -->
+<div class="text-center mt-6">
+    <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
+    <div class="flex justify-center space-x-4">
+        <?php foreach ($socials as $social): ?>
+            <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" 
+               class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow transition transform hover:scale-110 hover:bg-[#6C8BC9]">
+                <img src="<?= htmlspecialchars($social['icon']) ?>" 
+                     alt="<?= htmlspecialchars($social['platform']) ?>" 
+                     class="w-6 h-6 object-contain transition-transform duration-300 ease-in-out hover:filter hover:brightness-0 hover:invert">
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
 
         <!-- Footer Bottom: Copyright & Developer -->
         <div class="border-t border-[#6C8BC9] pt-6 text-center md:flex md:justify-between md:items-center mt-6">
@@ -131,47 +133,47 @@ $socials = getSocialLinks();
     </div>
 </footer>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Handle Image Download
-    document.querySelectorAll(".download-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            const imageUrl = this.getAttribute("data-url");
-            const fileName = imageUrl.split('/').pop();
+    document.addEventListener("DOMContentLoaded", function () {
+        // Handle Image Download
+        document.querySelectorAll(".download-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const imageUrl = this.getAttribute("data-url");
+                const fileName = imageUrl.split('/').pop();
 
-            fetch(imageUrl)
-                .then(response => response.blob())
-                .then(blob => {
-                    const link = document.createElement("a");
-                    link.href = URL.createObjectURL(blob);
-                    link.download = fileName;
-                    link.click();
-                })
-                .catch(error => console.error("Download failed:", error));
+                fetch(imageUrl)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const link = document.createElement("a");
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+                        link.click();
+                    })
+                    .catch(error => console.error("Download failed:", error));
+            });
         });
+
+        const toggleButton = document.getElementById("toggleButton");
+        const closeButton = document.getElementById("closePanel");
+        const floatingButton = document.getElementById("floatingButton");
+        const notificationPanel = document.getElementById("notificationPanel");
+
+        // Make sure the floating button appears
+        if (floatingButton) {
+            floatingButton.classList.remove("hidden");
+        }
+
+        // Toggle notifications panel
+        if (toggleButton && notificationPanel) {
+            toggleButton.addEventListener("click", function () {
+                notificationPanel.style.right = "10px"; // Slide into view
+            });
+        }
+
+        // Close panel
+        if (closeButton && notificationPanel) {
+            closeButton.addEventListener("click", function () {
+                notificationPanel.style.right = "-320px"; // Hide panel
+            });
+        }
     });
-
-    const toggleButton = document.getElementById("toggleButton");
-    const closeButton = document.getElementById("closePanel");
-    const floatingButton = document.getElementById("floatingButton");
-    const notificationPanel = document.getElementById("notificationPanel");
-
-    // Make sure the floating button appears
-    if (floatingButton) {
-        floatingButton.classList.remove("hidden");
-    }
-
-    // Toggle notifications panel
-    if (toggleButton && notificationPanel) {
-        toggleButton.addEventListener("click", function () {
-            notificationPanel.style.right = "10px"; // Slide into view
-        });
-    }
-
-    // Close panel
-    if (closeButton && notificationPanel) {
-        closeButton.addEventListener("click", function () {
-            notificationPanel.style.right = "-320px"; // Hide panel
-        });
-    }
-});
 </script>

@@ -5,8 +5,8 @@ if ($serverName === 'localhost' || $serverName === '127.0.0.1') {
     // Localhost settings
     $host = "127.0.0.1";
     $dbname = "church_web";
-    $username = "church_admin";
-    $password = "churchadmin";
+    $username = "root";
+    $password = "";
 } else {
     // Live/production settings
     $host = "localhost";
