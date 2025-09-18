@@ -43,7 +43,7 @@ $contact = getContactInfo();
 <body class="bg-[#ffffff]">
 
 <!-- Top Contact Bar -->
-<div class="bg-[#D18C7C] text-black py-2">
+<div class="bg-[#D18C7C] text-black py-2 z-[50]">
     <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 space-y-1 sm:space-y-0">
         <span class="text-xs sm:text-sm leading-tight"><strong>Location: </strong><?= htmlspecialchars($contact['location']) ?></span>
         <span class="text-xs sm:text-sm leading-tight"><strong>Need Assistance? Contact:</strong> <?= htmlspecialchars($contact['phone']) ?></span>
@@ -51,7 +51,7 @@ $contact = getContactInfo();
 </div>
 
 <!-- Header & Navigation -->
-<header class=" z-50 bg-[#D18C7C]/30 backdrop-blur-sm shadow-md">
+<header class="bg-[#D18C7C]/30 lg:bg-[#D18C7C]/30 lg:backdrop-blur-sm shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <!-- Logo & Title -->
         <div class="flex items-center">
@@ -60,7 +60,7 @@ $contact = getContactInfo();
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="relative z-50 hidden lg:block">
+        <nav class="hidden lg:block">
             <ul class="flex space-x-4 items-center">
                 <li><a href="/?page=home" class="<?= $current_page == 'home' ? 'text-[#6C8BC9] font-bold' : 'text-black' ?> hover:text-[#6C8BC9]">Home</a></li>
                 
@@ -100,7 +100,7 @@ $contact = getContactInfo();
     </div>
 
     <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#ffffff] text-black shadow-lg transform translate-x-full transition-transform duration-300 z-[9999]">
+    <nav id="mobile-menu" class=" z-[30] fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white text-black shadow-2xl border-l border-gray-200 transform translate-x-full transition-transform duration-300">
         <!-- Close Button (X) - Positioned at Top Left Inside Menu -->
         <button id="close-icon" class="absolute top-4 left-4 text-black hover:text-[#D18C7C] hidden">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
@@ -109,26 +109,26 @@ $contact = getContactInfo();
         </button>
 
         <ul class="p-6 space-y-4 mt-10">
-            <li><a href="/?page=home" class="hover:text-[#D18C7C]">Home</a></li>
+            <li><a href="/?page=home" class=" mobile-link2 hover:text-[#D18C7C]">Home</a></li>
             <li>
-                <button class="w-full text-left flex justify-between items-center hover:text-[#6C8BC9]" id="about-toggle">
+                <button class=" mobile-link2 w-full text-left flex justify-between items-center hover:text-[#6C8BC9]" id="about-toggle">
                     About <span>▾</span>
                 </button>
                 <ul id="about-dropdown-mobile" class="mobile-submenu hidden">
-                    <li><a href="/?page=who-we-are" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Who We Are</a></li>
-                    <li><a href="/?page=history" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">History</a></li>
-                    <li><a href="/?page=administration" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Administration</a></li>
-                    <li><a href="/?page=governance" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Governance</a></li>
-                    <li><a href="/?page=departments" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Departments</a></li>
-                    <li><a href="/?page=activities" class="block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Activities</a></li>
+                    <li><a href="/?page=who-we-are" class=" mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Who We Are</a></li>
+                    <li><a href="/?page=history" class="mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">History</a></li>
+                    <li><a href="/?page=administration" class="mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Administration</a></li>
+                    <li><a href="/?page=governance" class="mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Governance</a></li>
+                    <li><a href="/?page=departments" class="mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Departments</a></li>
+                    <li><a href="/?page=activities" class="mobile-link2 block px-4 py-2 text-black hover:bg-[#6C8BC9] hover:text-white">Activities</a></li>
                 </ul>
             </li>
-            <li><a href="/?page=resources" class="hover:text-[#D18C7C]">Resources</a></li>
-            <li><a href="/?page=get-involved" class="hover:text-[#D18C7C]">Get Involved</a></li>
-            <li><a href="/?page=contact-us" class="hover:text-[#D18C7C]">Contact</a></li>
-            <li><a href="/?page=become-member" class="hover:text-[#D18C7C]">Join</a></li>
+            <li><a href="/?page=resources" class="mobile-link2 hover:text-[#D18C7C]">Resources</a></li>
+            <li><a href="/?page=get-involved" class="mobile-link2 hover:text-[#D18C7C]">Get Involved</a></li>
+            <li><a href="/?page=contact-us" class="mobile-link2 hover:text-[#D18C7C]">Contact</a></li>
+            <li><a href="/?page=become-member" class="mobile-link2 hover:text-[#D18C7C]">Join</a></li>
             <!-- Admin Login -->
-            <li class="relative flex items-center">
+            <li class=" mobile-link2 relative flex items-center">
                 <a href="/?page=admin-login" class="hover:text-[#D18C7C]">Admin</a>
                 <span class="relative flex ml-1">
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6C8BC9] opacity-75"></span>

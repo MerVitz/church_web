@@ -109,9 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => {
         const linkPage = new URL(link.href).searchParams.get("page") || "home";
         if (linkPage === currentPage) {
-            link.classList.add("text-[#660000]", "font-bold");
+            link.classList.add("text-[#6C8BC9]", "font-bold");
         } else {
-            link.classList.remove("text-[#660000]", "font-bold");
+            link.classList.remove("text-[#6C8BC9]", "font-bold");
         }
     });
 
