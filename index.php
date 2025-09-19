@@ -6,7 +6,6 @@
  * - Loads the **header** once.
  * - Dynamically loads the **page content** using `router.php`.
  * - Loads the **footer** once.
- * 
  * The content displayed in the `<div class="content">` section
  * depends on the value of the `page` parameter in the URL.
  * Example: `index.php?page=about` will load `about.php` dynamically.
