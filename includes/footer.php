@@ -99,20 +99,20 @@ $socials = getSocialLinks();
             </div>
         </div>
 
-<!-- Social Media Links -->
-<div class="text-center mt-6">
-    <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
-    <div class="flex justify-center space-x-4">
-        <?php foreach ($socials as $social): ?>
-            <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" 
-               class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow transition transform hover:scale-110 hover:bg-[#6C8BC9]">
-                <img src="<?= htmlspecialchars($social['icon']) ?>" 
-                     alt="<?= htmlspecialchars($social['platform']) ?>" 
-                     class="w-6 h-6 object-contain transition-transform duration-300 ease-in-out hover:filter hover:brightness-0 hover:invert">
-            </a>
-        <?php endforeach; ?>
+    <!-- Social Media Links -->
+    <div class="text-center mt-6">
+        <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
+        <div class="flex justify-center space-x-4">
+            <?php foreach ($socials as $social): ?>
+                <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" 
+                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow transition transform hover:scale-110 hover:bg-[#6C8BC9]">
+                    <img src="<?= htmlspecialchars($social['icon']) ?>" 
+                        alt="<?= htmlspecialchars($social['platform']) ?>" 
+                        class="w-6 h-6 object-contain transition-transform duration-300 ease-in-out hover:filter hover:brightness-0 hover:invert">
+                </a>
+            <?php endforeach; ?>
+        </div>
     </div>
-</div>
 
 
 
@@ -127,7 +127,7 @@ $socials = getSocialLinks();
             <p class="text-xs md:text-sm text-black flex items-center justify-center md:justify-start space-x-2 mt-2 md:mt-0">
                 <span>Developed by</span> 
                 <img src="public/images/coding-icon.png" alt="Coding Icon" class="w-4 h-4 md:w-5 md:h-5 inline">
-                <a href="https://github.com/amakaluvitalis" target="_blank" class="text-black hover:text-[#D18C7C]">Amakalu Vitalis</a>
+                <a href="https://github.com/amakaluvitalis" target="_blank" class="text-black hover:text-[#D18C7C]">Almic Solutions</a>
             </p>
         </div>
     </div>
