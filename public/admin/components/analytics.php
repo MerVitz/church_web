@@ -2,17 +2,17 @@
 include_once __DIR__ . "/../../../includes/db.php";
 
 try {
-    // ✅ Ensure the analytics table exists
+    //  Ensure the analytics table exists
     $conn->query("SELECT 1 FROM analytics LIMIT 1");
 
-    // ✅ Fetch analytics data
+    //  Fetch analytics data
     $views = $conn->query("SELECT page_name, views FROM analytics ORDER BY views DESC")->fetchAll();
     $totalViews = $conn->query("SELECT SUM(views) AS total FROM analytics")->fetchColumn();
 } catch (PDOException $e) {
     $errorMessage = "Analytics table is missing! <a href='?create_table=true' class='text-blue-600 underline'>Click here to create it</a>.";
 }
 
-// ✅ Create Table if Not Exists (When User Clicks)
+// Create Table if Not Exists (When User Clicks)
 if (isset($_GET['create_table'])) {
     try {
         $conn->exec("CREATE TABLE analytics (
