@@ -17,34 +17,40 @@ $socials = getSocialLinks();
         <div class="grid md:grid-cols-4 gap-8 mb-8">
             
             <!-- Contact Information -->
-            <div class="text-left space-y-4">
-                <h3 class="text-2xl font-semibold text-[#000000] mb-4">Contact Us</h3>
+            <div class="text-center">
+                <!-- Title -->
+                <h3 class="text-2xl font-semibold text-[#000000] mb-6">Contact Us</h3>
 
-                <!-- Location -->
-                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
-                    <img src="public/icons/location.svg" alt="Location" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
-                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
-                        <?= htmlspecialchars($contact['location']) ?>
-                    </span>
-                </div>
+                <!-- Contact Items -->
+                <div class="space-y-4 max-w-sm mx-auto text-left">
+                    <!-- Location -->
+                    <div class="flex items-center gap-3 p-2 rounded-md group hover:bg-[#6C8BC9]/10 transition">
+                        <img src="public/icons/location.svg" alt="Location" 
+                            class="w-6 h-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition" />
+                        <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                            <?= htmlspecialchars($contact['location']) ?>
+                        </span>
+                    </div>
 
-                <!-- Phone -->
-                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
-                    <img src="public/icons/phone.svg" alt="Phone" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
-                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
-                        <?= htmlspecialchars($contact['phone']) ?>
-                    </span>
-                </div>
+                    <!-- Phone -->
+                    <div class="flex items-center gap-3 p-2 rounded-md group hover:bg-[#6C8BC9]/10 transition">
+                        <img src="public/icons/phone.svg" alt="Phone" 
+                            class="w-6 h-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition" />
+                        <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                            <?= htmlspecialchars($contact['phone']) ?>
+                        </span>
+                    </div>
 
-                <!-- Email -->
-                <div class="flex items-center gap-3 group p-2 rounded-md hover:bg-[#6C8BC9]/10 transition duration-300 hover:scale-[1.03]">
-                    <img src="public/icons/email.svg" alt="Email" class="w-6 h-6 group-hover:scale-110 group-hover:brightness-110" />
-                    <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
-                        <?= htmlspecialchars($contact['email']) ?>
-                    </span>
+                    <!-- Email -->
+                    <div class="flex items-center gap-3 p-2 rounded-md group hover:bg-[#6C8BC9]/10 transition">
+                        <img src="public/icons/email.svg" alt="Email" 
+                            class="w-6 h-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition" />
+                        <span class="text-black group-hover:text-[#6C8BC9] transition-colors duration-300">
+                            <?= htmlspecialchars($contact['email']) ?>
+                        </span>
+                    </div>
                 </div>
             </div>
-
 
             <!-- Giving & Offerings -->
             <div id="giving" class="bg-white p-6 rounded-lg shadow-md border border-[#6C8BC9] text-center">
@@ -65,9 +71,14 @@ $socials = getSocialLinks();
             </div>
 
             <!-- Quick Links -->
-            <div class="text-left">
-                <h3 class="text-2xl font-semibold text-[#000000] mb-4">Quick Links</h3>
-                <ul class="grid grid-cols-2 gap-3 text-sm sm:text-base">
+            <div class="text-center">
+                <!-- Title -->
+                <h3 class="text-2xl font-semibold text-[#000000] mb-6">Quick Links</h3>
+
+                <!-- Links -->
+                <ul class="grid gap-x-12 gap-y-4 mx-auto text-sm sm:text-base text-left w-full max-w-5xl 
+                        [grid-template-columns:repeat(2,max-content)] 
+                        md:[grid-template-columns:repeat(3,max-content)]">
                     <?php
                         $links = [
                             ['href' => '/?page=home', 'text' => 'Home'],
@@ -87,32 +98,50 @@ $socials = getSocialLinks();
                         foreach ($links as $link) {
                             echo '
                             <li>
-                                <a href="' . $link['href'] . '" class="group flex items-center gap-2 p-1 rounded-md text-black hover:text-[#6C8BC9] hover:bg-[#6C8BC9]/10 transition duration-300 ease-in-out transform hover:scale-[1.03]">
-                                    <img src="public/icons/bx-link.svg" alt="Link Icon" class="w-4 h-4 transition duration-300 ease-in-out group-hover:scale-110 group-hover:brightness-110" />
-                                    <span class="transition-colors duration-300">' . $link['text'] . '</span>
+                                <a href="' . $link['href'] . '" 
+                                class="group flex items-center gap-2 p-1 rounded-md text-black 
+                                    hover:text-[#6C8BC9] hover:bg-[#6C8BC9]/10 transition">
+                                    <img src="public/icons/bx-link.svg" alt="Link Icon" 
+                                        class="w-4 h-4 opacity-70 group-hover:opacity-100 transition" />
+                                    <span class="whitespace-nowrap">' . $link['text'] . '</span>
                                 </a>
                             </li>
-                                    ';
+                            ';
                         }
                     ?>
                 </ul>
             </div>
+            
         </div>
 
-    <!-- Social Media Links -->
-    <div class="text-center mt-6">
-        <h3 class="text-2xl font-semibold text-[#000000] mb-4">Follow Us</h3>
-        <div class="flex justify-center space-x-4">
-            <?php foreach ($socials as $social): ?>
-                <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" 
-                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow transition transform hover:scale-110 hover:bg-[#6C8BC9]">
-                    <img src="<?= htmlspecialchars($social['icon']) ?>" 
-                        alt="<?= htmlspecialchars($social['platform']) ?>" 
-                        class="w-6 h-6 object-contain transition-transform duration-300 ease-in-out hover:filter hover:brightness-0 hover:invert">
-                </a>
-            <?php endforeach; ?>
+        <!-- Social Media & Logo Section -->
+        <div class="mt-10">
+            <div class="flex flex-col items-center lg:flex-row lg:justify-between lg:items-center gap-6">
+                
+                <!-- Logo + Name -->
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <img src="public/images/ack_logo.png" alt="Church Logo" 
+                        class="h-16 lg:h-20 w-auto object-contain mb-3 lg:mb-0">
+                    <p class="text-base lg:text-lg font-semibold text-[#6C8BC9]">
+                        ACK All Saints Maseno Parish
+                    </p>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center lg:justify-end flex-wrap gap-4">
+                    <?php foreach ($socials as $social): ?>
+                        <a href="<?= htmlspecialchars($social['url']) ?>" target="_blank" 
+                        class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow transition transform hover:scale-110 hover:bg-[#6C8BC9]">
+                            <img src="<?= htmlspecialchars($social['icon']) ?>" 
+                                alt="<?= htmlspecialchars($social['platform']) ?>" 
+                                class="w-6 h-6 object-contain transition-transform duration-300 ease-in-out hover:filter hover:brightness-0 hover:invert">
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
-    </div>
+
+
 
 
 
@@ -131,7 +160,10 @@ $socials = getSocialLinks();
             </p>
         </div>
     </div>
+
+
 </footer>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Handle Image Download

@@ -46,7 +46,7 @@ $pageTitle = "Get Involved";
 
         <!-- ITEM -->
         <div class="group bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl">
-            <img src="public/images/departments-icon.png" alt="Departments" class="w-16 h-16 mb-6 mx-auto">
+            <img src="public/images/department.png" alt="Departments" class="w-16 h-16 mb-6 mx-auto">
             <h3 class="text-2xl text-[#6C8BC9] mb-3 text-center">Join Our Departments</h3>
             <p class="text-black text-sm mb-4">
                 Use your skills and passions in ministry. There’s a place for everyone in our various departments.

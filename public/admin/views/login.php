@@ -30,10 +30,12 @@ function generateCsrfToken() {
     </head>
     <body class="min-h-screen bg-gradient-to-r from-[#6C8BC9] to-[#D18C7C] relative">
 
-    <!-- Back to Home -->
-    <a href="/" class="absolute top-4 left-4 px-3 py-1 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition">
-        ← Back to Home
+    <!-- Back to Site -->
+    <a href="/" 
+    class="absolute top-4 left-4 px-3 py-1 text-sm bg-white/10 text-white font-medium rounded-md hover:bg-white/20 transition">
+        ← Back to Site
     </a>
+
 
         <?php if (!empty($message)) : ?>
             <div class="bg-red-500 text-white p-3 rounded-lg mb-4">

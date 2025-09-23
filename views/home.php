@@ -34,176 +34,203 @@ $notices = getNotices()
         </p>
     </div>
 </section>
-<!-- Vision, Mission, Core Values Section -->
-<section class="py-8 bg-[#ffffff] text-center">
-    <div class="container mx-auto px-6 md:px-12">
-        <h2 class="text-4xl font-bold text-[#000000] mb-12">Our Vision, Mission & Core Values</h2>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <!-- Mission -->
-            <div class="flex items-center bg-[#ffffff] custom-shadow rounded-lg p-8">
-                <div class="w-24 h-24 flex-shrink-0">
-                    <img src="<?= htmlspecialchars($visionMissionSlogan[0]['image_url']) ?>" alt="Mission Icon" class="w-full h-full object-contain">
-                </div>
-                <div class="ml-6 border-l-4 border-[#6C8BC9] pl-6">
-                    <h3 class="text-3xl font-bold text-[#6C8BC9] mb-3"><?= htmlspecialchars($visionMissionSlogan[0]['title']) ?></h3>
-                    <p class="text-black leading-relaxed">
+
+    <!-- Vision, Mission, Slogan, Core Values Section -->
+    <section class="py-12 bg-[#ffffff] text-center">
+        <div class="container mx-auto px-6 md:px-12">
+
+            <!-- Section Intro -->
+            <div class="mb-14">
+                <p class="text-sm uppercase tracking-wide text-[#6C8BC9] mb-2">Who We Are</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800">
+                    Vision, Mission, Slogan & Core Values
+                </h2>
+                <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+                    What drives us forward and keeps us true to our purpose.
+                </p>
+            </div>
+
+            <!-- Mission, Vision & Slogan in one row -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mission -->
+                <div class="flex flex-col items-center text-center 
+                    bg-gradient-to-r from-[#D18C7C]/10 to-[#6C8BC9]/10 
+                    custom-shadow rounded-2xl p-8 transition-transform hover:scale-105">
+                    
+                    <img src="<?= htmlspecialchars($visionMissionSlogan[0]['image_url']) ?>" 
+                        alt="Mission Icon" 
+                        class="w-20 h-20 object-contain mb-4">
+                        
+                    <h3 class="text-2xl font-bold text-[#6C8BC9] mb-3">
+                        <?= htmlspecialchars($visionMissionSlogan[0]['title']) ?>
+                    </h3>
+                    
+                    <p class="text-black leading-relaxed text-base">
                         <?= htmlspecialchars($visionMissionSlogan[0]['content']) ?>
                     </p>
                 </div>
-            </div>
 
-            <!-- Vision -->
-            <div class="flex items-center bg-[#ffffff] custom-shadow rounded-lg p-8">
-                <div class="w-24 h-24 flex-shrink-0">
-                    <img src="<?= htmlspecialchars($visionMissionSlogan[1]['image_url']) ?>" alt="Vision Icon" class="w-full h-full object-contain">
-                </div>
-                <div class="ml-6 border-l-4 border-[#6C8BC9] pl-6">
-                    <h3 class="text-3xl font-bold text-[#6C8BC9] mb-3"><?= htmlspecialchars($visionMissionSlogan[1]['title']) ?></h3>
-                    <p class="text-black leading-relaxed">
+                <!-- Vision -->
+                <div class="flex flex-col items-center text-center 
+                    bg-gradient-to-r from-[#6C8BC9]/10 to-[#D18C7C]/10 
+                    custom-shadow rounded-2xl p-8 transition-transform hover:scale-105">
+                    
+                    <img src="<?= htmlspecialchars($visionMissionSlogan[1]['image_url']) ?>" 
+                        alt="Vision Icon" 
+                        class="w-20 h-20 object-contain mb-4">
+                        
+                    <h3 class="text-2xl font-bold text-[#6C8BC9] mb-3">
+                        <?= htmlspecialchars($visionMissionSlogan[1]['title']) ?>
+                    </h3>
+                    
+                    <p class="text-black leading-relaxed text-base">
                         <?= htmlspecialchars($visionMissionSlogan[1]['content']) ?>
                     </p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Slogan Section -->
-        <div class="mt-12 text-center">
-            <div class="flex items-center justify-center bg-[#ffffff] custom-shadow rounded-lg p-8 max-w-3xl mx-auto">
-                <!-- Slogan Icon -->
-                <div class="w-24 h-24 flex-shrink-0">
-                    <img src="<?= htmlspecialchars($visionMissionSlogan[2]['image_url']) ?>" alt="Slogan Icon" class="w-full h-full object-contain">
-                </div>
-                <!-- Slogan Content -->
-                <div class="ml-6 border-l-4 border-[#6C8BC9] pl-6 text-left">
-                    <h3 class="text-3xl font-bold text-[#6C8BC9] mb-4"><?= htmlspecialchars($visionMissionSlogan[2]['title']) ?></h3>
-                    <div class="p-6 rounded-lg bg-gradient-to-r from-white via-[#D18C7C]/10 to-[#6C8BC9]/10 shadow-lg">
-                        <p class="text-2xl md:text-3xl font-semibold italic leading-relaxed text-black">
-                            <span class="text-[#D18C7C] text-5xl font-bold">“</span> 
+                <!-- Slogan -->
+                <div class="flex flex-col items-center text-center 
+                    bg-gradient-to-r from-[#D18C7C]/10 via-white/50 to-[#6C8BC9]/10 
+                    custom-shadow rounded-2xl p-8 transition-transform hover:scale-105 relative overflow-hidden">
+                    
+                    <img src="<?= htmlspecialchars($visionMissionSlogan[2]['image_url']) ?>" 
+                        alt="Slogan Icon" 
+                        class="w-20 h-20 object-contain mb-4">
+                        
+                    <h3 class="text-2xl font-bold text-[#6C8BC9] mb-4">
+                        <?= htmlspecialchars($visionMissionSlogan[2]['title']) ?>
+                    </h3>
+                    
+                    <!-- Modern Highlighted Quote -->
+                    <p class="relative text-lg md:text-xl italic font-medium leading-relaxed text-gray-800">
+                        <span class="text-5xl text-[#D18C7C] font-extrabold align-top">“</span>
+                        
+                        <span class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#D18C7C]/20 via-white/60 to-[#6C8BC9]/20 shadow-sm">
                             <?= htmlspecialchars($visionMissionSlogan[2]['content']) ?>
-                            <span class="text-[#6C8BC9] text-5xl font-bold">”</span>
-                        </p>
-                    </div>
+                        </span>
+                        
+                        <span class="text-5xl text-[#6C8BC9] font-extrabold align-bottom">”</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Core Values -->
+            <div class="mt-20 text-center">
+                <h3 class="text-2xl md:text-3xl font-semibold text-[#6C8BC9] mb-8">Our Core Values</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 justify-items-center">
+                    <?php
+                        $core_values = [
+                            ["love-icon.png", "Love"],
+                            ["discipleship-icon.png", "Discipleship"],
+                            ["discernment-icon.png", "Discernment"],
+                            ["compassion-icon.png", "Compassion"],
+                            ["stewardship-icon.png", "Stewardship"]
+                        ];
+                        foreach ($core_values as $value) {
+                            echo '<div class="flex flex-col items-center justify-center w-40 h-40 bg-white custom-shadow rounded-2xl transition-transform hover:scale-110 hover:bg-[#D18C7C] hover:text-white">
+                                    <img src="public/images/'.$value[0].'" alt="'.$value[1].' Icon" class="w-14 h-14 mb-3">
+                                    <span class="font-semibold text-lg">'.$value[1].'</span>
+                                </div>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Core Values -->
-        <div class="mt-12 text-center">
-            <h3 class="text-3xl font-bold text-[#6C8BC9] mb-6">Core Values</h3>
-            <div class="flex flex-wrap justify-center gap-8">
-                <!-- Core Values Hexagons -->
-                <?php
-                    $core_values = [
-                        ["love-icon.png", "Love"],
-                        ["discipleship-icon.png", "Discipleship"],
-                        ["discernment-icon.png", "Discernment"],
-                        ["compassion-icon.png", "Compassion"],
-                        ["stewardship-icon.png", "Stewardship"]
-                    ];
-                    foreach ($core_values as $value) {
-                        echo '<div class="w-40 h-40 bg-[#ffffff] text-black flex flex-col items-center justify-center font-semibold text-lg text-center shadow-md transition-transform hover:scale-105 hover:bg-[#D18C7C] hover:text-white" 
-                                style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);">
-                                <img src="public/images/'.$value[0].'" alt="'.$value[1].' Icon" class="w-14 h-14 mb-2">
-                                <span>'.$value[1].'</span>
-                            </div>';
-                    }
-                ?>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Notice Board -->
+    <section class="py-8 bg-cover bg-center text-black" style="background-image: url('public/images/cross-1.gif');">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h3 class="text-3xl font-bold text-[#6C8BC9] mb-6">NOTICE BOARD</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Featured Poster -->
+                <div class="bg-[#ffffff] bg-opacity-90 shadow-lg rounded-lg p-8 text-black">
+                    <h3 class="text-2xl text-[#6C8BC9] mb-4">Poster of the Week</h3>
+                    <img src="public/images/event2.jpg" alt="Weekly Poster" class="w-full rounded-lg shadow-md">
+                </div>
 
-<!-- Notice Board -->
-<section class="py-8 bg-cover bg-center text-black" style="background-image: url('public/images/cross-1.gif');">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-        <h3 class="text-3xl font-bold text-[#6C8BC9] mb-6">NOTICE BOARD</h3>
-        <div class="grid md:grid-cols-2 gap-12 items-start">
-            <!-- Featured Poster -->
-            <div class="bg-[#ffffff] bg-opacity-90 shadow-lg rounded-lg p-8 text-black">
-                <h3 class="text-2xl text-[#6C8BC9] mb-4">Poster of the Week</h3>
-                <img src="public/images/event2.jpg" alt="Weekly Poster" class="w-full rounded-lg shadow-md">
-            </div>
+                <div class="bg-[#ffffff] bg-opacity-90 shadow-lg rounded-lg p-8 text-black">
+                    <h3 class="text-2xl text-[#6C8BC9] mb-4">Our Weekly Services</h3>
+                    <div class="divide-y divide-[#6C8BC9]/30">
+                        <div class="py-4">
+                            <h4 class="text-xl text-[#6C8BC9]">Sunday</h4>
+                            <ul class="mt-2 text-black">
+                                <li class="mt-1">6:00 AM - 7:00 AM: Morning Devotion</li>
+                                <li class="mt-1">7:00 AM - 9:00 AM: 1st Service</li>
+                                <li class="mt-1">10:00 AM - 12:00 PM: 2nd Service</li>
+                                <li class="mt-1">2:00 PM - 5:00 PM: Scheme Fellowship</li>
+                                <li class="mt-1">3:00 PM - 5:00 PM: Bible Study</li>
+                            </ul>
+                        </div>
 
-            <div class="bg-[#ffffff] bg-opacity-90 shadow-lg rounded-lg p-8 text-black">
-                <h3 class="text-2xl text-[#6C8BC9] mb-4">Our Weekly Services</h3>
-                <div class="divide-y divide-[#6C8BC9]/30">
-                    <div class="py-4">
-                        <h4 class="text-xl text-[#6C8BC9]">Sunday</h4>
-                        <ul class="mt-2 text-black">
-                            <li class="mt-1">6:00 AM - 7:00 AM: Morning Devotion</li>
-                            <li class="mt-1">7:00 AM - 9:00 AM: 1st Service</li>
-                            <li class="mt-1">10:00 AM - 12:00 PM: 2nd Service</li>
-                            <li class="mt-1">2:00 PM - 5:00 PM: Scheme Fellowship</li>
-                            <li class="mt-1">3:00 PM - 5:00 PM: Bible Study</li>
-                        </ul>
-                    </div>
+                        <div class="py-4">
+                            <h4 class="text-xl text-[#6C8BC9]">Tuesday</h4>
+                            <ul class="mt-2 text-black">
+                                <li class="mt-1">5:00 PM - 6:00 PM: Intercessory Prayers</li>
+                            </ul>
+                        </div>
 
-                    <div class="py-4">
-                        <h4 class="text-xl text-[#6C8BC9]">Tuesday</h4>
-                        <ul class="mt-2 text-black">
-                            <li class="mt-1">5:00 PM - 6:00 PM: Intercessory Prayers</li>
-                        </ul>
-                    </div>
+                        <div class="py-4">
+                            <h4 class="text-xl text-[#6C8BC9]">Wednesday (Midweek Service)</h4>
+                            <ul class="mt-2 text-black">
+                                <li class="mt-1">6:30 AM - 7:30 AM: Morning Service</li>
+                                <li class="mt-1">5:30 PM - 6:30 PM: Evening Service</li>
+                            </ul>
+                        </div>
 
-                    <div class="py-4">
-                        <h4 class="text-xl text-[#6C8BC9]">Wednesday (Midweek Service)</h4>
-                        <ul class="mt-2 text-black">
-                            <li class="mt-1">6:30 AM - 7:30 AM: Morning Service</li>
-                            <li class="mt-1">5:30 PM - 6:30 PM: Evening Service</li>
-                        </ul>
-                    </div>
-
-                    <div class="py-4">
-                        <h4 class="text-xl text-[#6C8BC9]">Friday</h4>
-                        <ul class="mt-2 text-black">
-                            <li class="mt-1">6:00 PM - 7:00 PM: Youth Fellowship</li>
-                        </ul>
+                        <div class="py-4">
+                            <h4 class="text-xl text-[#6C8BC9]">Friday</h4>
+                            <ul class="mt-2 text-black">
+                                <li class="mt-1">6:00 PM - 7:00 PM: Youth Fellowship</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Flowing Notices Section -->
-        <div class="bg-[#6C8BC9]/70 py-8 px-6 md:px-12 w-full overflow-hidden relative mt-12 rounded-xl">
-            <div id="marquee-container" class="relative w-full flex justify-center">
-                <div id="carousel" class="relative w-[1200px] overflow-hidden">
-                    <div id="carousel-inner" class="flex space-x-6">
-                        <?php foreach ($notices as $notice): ?>
-                            <div class="carousel-item 
-                                        bg-white 
-                                        text-black 
-                                        rounded-3xl 
-                                        shadow-xl 
-                                        min-w-[280px] max-w-[280px] 
-                                        text-center flex flex-col justify-center items-center
-                                        transition duration-300 ease-in-out
-                                        hover:scale-105 hover:shadow-2xl hover:bg-[#e1f0ff]
-                                        relative">
+            <!-- Flowing Notices Section -->
+            <div class="bg-[#6C8BC9]/70 py-8 px-6 md:px-12 w-full overflow-hidden relative mt-12 rounded-xl">
+                <div id="marquee-container" class="relative w-full flex justify-center">
+                    <div id="carousel" class="relative w-[1200px] overflow-hidden">
+                        <div id="carousel-inner" class="flex space-x-6">
+                            <?php foreach ($notices as $notice): ?>
+                                <div class="carousel-item 
+                                            bg-white 
+                                            text-black 
+                                            rounded-3xl 
+                                            shadow-xl 
+                                            min-w-[280px] max-w-[280px] 
+                                            text-center flex flex-col justify-center items-center
+                                            transition duration-300 ease-in-out
+                                            hover:scale-105 hover:shadow-2xl hover:bg-[#e1f0ff]
+                                            relative">
 
-                                <!-- Notice Header with Icon -->
-                                <div class="flex items-center justify-center gap-2 mb-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6C8BC9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m0-4h.01M12 20h.01M12 4v1m0 14v1M20 12h-1m-14 0H4m16.364-4.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707M17.657 17.657l.707.707" />
-                                    </svg>
-                                    <span class="font-semibold text-[#6C8BC9] text-base">Notice</span>
+                                    <!-- Notice Header with Icon -->
+                                    <div class="flex items-center justify-center gap-2 mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6C8BC9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m0-4h.01M12 20h.01M12 4v1m0 14v1M20 12h-1m-14 0H4m16.364-4.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707M17.657 17.657l.707.707" />
+                                        </svg>
+                                        <span class="font-semibold text-[#6C8BC9] text-base">Notice</span>
+                                    </div>
+
+                                    <!-- Notice Text -->
+                                    <p class="text-sm font-light leading-relaxed px-2">
+                                        <?php echo nl2br(htmlspecialchars($notice['notice_text'])); ?>
+                                    </p>
+
+                                    <!-- Bottom Accent Line -->
+                                    <div class="mt-4 w-12 h-1 bg-[#6C8BC9] rounded-full"></div>
                                 </div>
-
-                                <!-- Notice Text -->
-                                <p class="text-sm font-light leading-relaxed px-2">
-                                    <?php echo nl2br(htmlspecialchars($notice['notice_text'])); ?>
-                                </p>
-
-                                <!-- Bottom Accent Line -->
-                                <div class="mt-4 w-12 h-1 bg-[#6C8BC9] rounded-full"></div>
-                            </div>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const carouselInner = document.getElementById("carousel-inner");

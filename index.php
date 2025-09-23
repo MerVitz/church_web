@@ -30,8 +30,14 @@ if (!in_array($page, $isAdminPage)) {
 </div>
 
 <?php 
-if (!in_array($page, $isAdminPage)) {
-    include_once "includes/announcements.php"; 
-    include_once 'includes/footer.php';
-}
+    if (!in_array($page, $isAdminPage)) 
+        {
+            include_once "includes/announcements.php"; 
+            include_once 'includes/footer.php';
+        }
+
 ?>
+
+
+
+
