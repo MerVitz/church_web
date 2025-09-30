@@ -1,4 +1,7 @@
 <?php 
+session_start();
+// The session should start at the top before calling anythign else
+
 /**
  * Main entry point of the website.
  * 
@@ -15,6 +18,7 @@
  $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 // Detect if this is an admin page
+
 $isAdminPage = ['admin-login', 'admin-home'];
 
 if (!in_array($page, $isAdminPage)) {
