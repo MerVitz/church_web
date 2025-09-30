@@ -22,8 +22,8 @@ try {
     }
 
     $unreadMessages = getCountWhere($conn, "contact_messages", "status = 'unread'");
-    $upcomingEvents = getCountWhere($conn, "upcoming_events", "date <= CURDATE()");
-    // $pendingAnnouncements = getCountWhere($conn, "announcements", "status='draft'");
+    $upcomingEvents = getCountWhere($conn, "upcoming_events", "date >= CURDATE()");
+    $pendingAnnouncements = getCountWhere($conn, "announcements", "status='draft'");
 
     // Ministry Trends
     $totalMinistryApplications = getTotal($conn, "ministry_applications");
@@ -52,7 +52,7 @@ try {
         'totalPrayerRequests' => $totalPrayerRequests,
         'unreadMessages' => $unreadMessages,
         'upcomingEvents' => $upcomingEvents,
-        // 'pendingAnnouncements' => $pendingAnnouncements,
+        'pendingAnnouncements' => $pendingAnnouncements,
         'totalMinistryApplications' => $totalMinistryApplications,
         'newMinistryApplications' => $newMinistryApplications,
         'topMinistries' => $topMinistries,

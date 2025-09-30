@@ -8,9 +8,9 @@ if (!isset($_SESSION['admin'])) {
 }
 ?>
 
-<div class="h-full w-full flex flex-col space-y-6 p-6 bg-gray-100">
+<div class="h-full w-full flex flex-col space-y-6 p-6 bg-gray-100 overflow-y-auto">
 
-    <!-- 🔹 Top Stats Section -->
+    <!-- Top Stats Section -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div class="p-6 bg-white shadow-md rounded-lg text-center border-l-4 border-blue-600">
             <h3 class="text-lg font-semibold text-gray-700">Total Admins</h3>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['admin'])) {
         </div>
     </div>
 
-    <!-- 🔹 Church Engagement & Communication -->
+    <!-- Church Engagement & Communication -->
     <div class="bg-white shadow-md rounded-lg p-6">
         <h3 class="text-xl font-semibold text-gray-700 mb-4">Church Engagement</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -49,7 +49,7 @@ if (!isset($_SESSION['admin'])) {
         </div>
     </div>
 
-    <!-- 🔹 Ministry Applications Trends -->
+    <!-- Ministry Applications Trends -->
     <div class="bg-white shadow-md rounded-lg p-6">
         <h3 class="text-xl font-semibold text-gray-700 mb-4">Ministry Trends</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -68,8 +68,8 @@ if (!isset($_SESSION['admin'])) {
         </div>
     </div>
 
-    <!-- 🔹 Media & Content -->
-    <div class="bg-white shadow-md rounded-lg p-6">
+    <!-- Media & Content -->
+    <div class="bg-white shadow-md rounded-lg p-6 flex-1">
         <h3 class="text-xl font-semibold text-gray-700 mb-4">Media & Content</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="p-4 bg-teal-100 rounded-lg text-center">
@@ -94,3 +94,6 @@ if (!isset($_SESSION['admin'])) {
     </div>
 
 </div>
+
+
+

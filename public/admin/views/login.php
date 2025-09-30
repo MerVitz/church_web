@@ -161,6 +161,7 @@ function generateCsrfToken() {
             }
 
         </script>
+        
     </body>
 </html>
 
