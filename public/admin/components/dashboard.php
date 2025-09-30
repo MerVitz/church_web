@@ -17,8 +17,8 @@ if (!isset($_SESSION['admin'])) {
             <p class="text-3xl font-bold text-blue-600" id="totalAdmins">0</p>
         </div>
         <div class="p-6 bg-white shadow-md rounded-lg text-center border-l-4 border-green-600">
-            <h3 class="text-lg font-semibold text-gray-700">Total Ministries</h3>
-            <p class="text-3xl font-bold text-green-600" id="totalMinistries">0</p>
+            <h3 class="text-lg font-semibold text-gray-700">Total Departments</h3>
+            <p class="text-3xl font-bold text-green-600" id="totalDepartments">0</p>
         </div>
         <div class="p-6 bg-white shadow-md rounded-lg text-center border-l-4 border-yellow-500">
             <h3 class="text-lg font-semibold text-gray-700">Total Members</h3>
@@ -49,21 +49,21 @@ if (!isset($_SESSION['admin'])) {
         </div>
     </div>
 
-    <!-- Ministry Applications Trends -->
+    <!-- Departments Applications Trends -->
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h3 class="text-xl font-semibold text-gray-700 mb-4">Ministry Trends</h3>
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Departments Trends</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="p-4 bg-gray-100 rounded-lg text-center">
                 <h3 class="text-lg font-semibold text-gray-700">Total Applications</h3>
-                <p class="text-2xl font-bold text-gray-700" id="totalMinistryApplications">0</p>
+                <p class="text-2xl font-bold text-gray-700" id="totalDepartmentApplications">0</p>
             </div>
             <div class="p-4 bg-pink-100 rounded-lg text-center">
                 <h3 class="text-lg font-semibold text-pink-600">New Applications This Month</h3>
-                <p class="text-2xl font-bold text-pink-600" id="newMinistryApplications">0</p>
+                <p class="text-2xl font-bold text-pink-600" id="newDepartmentApplications">0</p>
             </div>
             <div class="p-4 bg-white border border-gray-300 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-700">Top Requested Ministries</h3>
-                <ul id="topMinistries" class="list-disc list-inside text-gray-600"></ul>
+                <h3 class="text-lg font-semibold text-gray-700">Top Requested Departments</h3>
+                <ul id="topDepartments" class="list-disc list-inside text-gray-600"></ul>
             </div>
         </div>
     </div>

@@ -120,14 +120,14 @@ header("Expires: Wed, 11 Jan 1984 05:00:00 GMT");
         if (!data) return;
 
         updateElement("totalAdmins", data.totalAdmins);
-        updateElement("totalMinistries", data.totalMinistries);
+        updateElement("totalDepartments", data.totalDepartments);
         updateElement("totalMembers", data.totalMembers);
         updateElement("totalPrayerRequests", data.totalPrayerRequests);
         updateElement("unreadMessages", data.unreadMessages);
         updateElement("upcomingEvents", data.upcomingEvents);
         updateElement("pendingAnnouncements", data.pendingAnnouncements);
-        updateElement("totalMinistryApplications", data.totalMinistryApplications);
-        updateElement("newMinistryApplications", data.newMinistryApplications);
+        updateElement("totalDepartmentApplications", data.totalDepartmentApplications);
+        updateElement("newDepartmentApplications", data.newDepartmentApplications);
         updateElement("totalSermons", data.totalSermons);
         updateElement("totalAudioSermons", data.totalAudioSermons);
         updateElement("totalImageSets", data.totalImageSets);
@@ -138,13 +138,13 @@ header("Expires: Wed, 11 Jan 1984 05:00:00 GMT");
             updateElement("recentSermonDate", data.recentSermon.date);
         }
 
-        const topMinistriesContainer = document.getElementById("topMinistries");
-        if (topMinistriesContainer) {
-            topMinistriesContainer.innerHTML = "";
-            data.topMinistries.forEach(ministry => {
+        const topDepartmentsContainer = document.getElementById("topDepartments");
+        if (topDepartmentsContainer) {
+            topDepartmentsContainer.innerHTML = "";
+            data.topDepartments.forEach(department => {
                 const li = document.createElement("li");
-                li.textContent = `${ministry.ministry_name} - Applications: ${ministry.count}`;
-                topMinistriesContainer.appendChild(li);
+                li.textContent = `${department.department_name} - Applications: ${department.count}`;
+                topDepartmentsContainer.appendChild(li);
             });
         }
     }
