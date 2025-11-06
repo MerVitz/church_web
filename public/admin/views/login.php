@@ -1,5 +1,4 @@
 <?php
-session_start();
 $message = "";
 
 if (isset($_SESSION['message'])) {
@@ -54,7 +53,7 @@ function generateCsrfToken() {
                 </div>
                 <?php endif; ?>
 
-                <form id="login-form" class="space-y-4" method="POST" action="/public/admin/auth.php">
+                <form id="login-form" class="space-y-4" method="POST" action="/admin/auth.php">
                     <!-- Username -->
                     <div>
                         <label for="username" class="text-white font-semibold">Username</label>
@@ -162,6 +161,7 @@ function generateCsrfToken() {
             }
 
         </script>
+        
     </body>
 </html>
 

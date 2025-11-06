@@ -2,7 +2,7 @@
 // reset_admin_password.php
 // Run once, then delete
 
-include __DIR__ . '/includes/db.php'; // adjust path if needed
+include __DIR__ . '/includes/db.php';
 
 $username = 'admin';
 $newPassword = 'NewSecureP@ssw0rd!';

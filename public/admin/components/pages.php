@@ -1,4 +1,29 @@
 <?php
+/**
+ * Admin Hero Section Editor
+ * ---------------------------------------
+ * Purpose:
+ * - Provides an interface for admins to edit the homepage hero slider.
+ * - Allows selecting a hero slide, fetching its details via AJAX, and updating them.
+ *
+ * Features:
+ * - Session-protected (only logged-in admins can access).
+ * - Dropdown list of available hero slides from DB.
+ * - Form to edit title, content, and image URL.
+ * - AJAX form submission to update hero data without page reload.
+ *
+ * Dependencies:
+ * - Requires `heroModel.php` for DB interactions:
+ *      - getHeroSections($conn) → fetches all hero slides
+ *      - getHeroById($conn, $id) → fetches details of a single hero
+ *      - POST with action=updateHero → updates slide details
+ * - Requires active session with `$_SESSION['admin']`.
+ *
+ * Security:
+ * - Redirects unauthorized users to login.
+ * - Uses prepared statements inside heroModel (not here).
+ */
+
 session_start();
 if (!isset($_SESSION['admin'])) {
     header("Location: /?page=admin-login");

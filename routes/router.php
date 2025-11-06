@@ -70,21 +70,16 @@ switch ($page) {
         exit();
 
     case 'admin-home':
-        session_start();
         error_log("Checking session...");
         error_log("Session Data: " . json_encode($_SESSION));
-    
+
         if (!isset($_SESSION['admin_name'])) {
             error_log("Access denied. Redirecting to admin-login...");
-        
-            // Store a message before redirecting
-            session_start();
             $_SESSION['message'] = "Your session has expired. Please log in again.";
-            session_write_close();
-    
             header("Location: /?page=admin-login");
             exit();
         }
+
         error_log("Session found! Loading admin-home...");
         $pageTitle = "Admin Dashboard";
         include __DIR__ . "/../public/admin/views/admin-home.php";
