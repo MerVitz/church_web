@@ -63,7 +63,7 @@ $socials = getSocialLinks();
 
             <!-- Prayer Line Button -->
             <div class="flex justify-center items-center">
-                <a href="/?page=prayer-line" 
+                <a href="?page=prayer-line" 
                    class="px-6 py-3 bg-[#6C8BC9] text-white rounded-lg hover:bg-[#D18C7C] shadow-md transition flex items-center space-x-3">
                     <img src="public/images/pray.png" alt="Prayer Icon" class="w-8 h-8">
                     <span class="text-lg font-semibold">Prayer Line</span>
@@ -81,18 +81,18 @@ $socials = getSocialLinks();
                         md:[grid-template-columns:repeat(3,max-content)]">
                     <?php
                         $links = [
-                            ['href' => '/?page=home', 'text' => 'Home'],
-                            ['href' => '/?page=who-we-are', 'text' => 'Who We Are'],
-                            ['href' => '/?page=history', 'text' => 'History'],
-                            ['href' => '/?page=administration', 'text' => 'Administration'],
-                            ['href' => '/?page=governance', 'text' => 'Governance'],
-                            ['href' => '/?page=departments', 'text' => 'Departments'],
-                            ['href' => '/?page=activities', 'text' => 'Activities'],
-                            ['href' => '/?page=resources', 'text' => 'Resources'],
-                            ['href' => '/?page=get-involved', 'text' => 'Get Involved'],
-                            ['href' => '/?page=contact-us', 'text' => 'Contact Us'],
-                            ['href' => '/?page=become-member', 'text' => 'Join Us'],
-                            ['href' => '/?page=prayer-line', 'text' => 'Prayer Line'],
+                            ['href' => '?page=home', 'text' => 'Home'],
+                            ['href' => '?page=who-we-are', 'text' => 'Who We Are'],
+                            ['href' => '?page=history', 'text' => 'History'],
+                            ['href' => '?page=administration', 'text' => 'Administration'],
+                            ['href' => '?page=governance', 'text' => 'Governance'],
+                            ['href' => '?page=departments', 'text' => 'Departments'],
+                            ['href' => '?page=activities', 'text' => 'Activities'],
+                            ['href' => '?page=resources', 'text' => 'Resources'],
+                            ['href' => '?page=get-involved', 'text' => 'Get Involved'],
+                            ['href' => '?page=contact-us', 'text' => 'Contact Us'],
+                            ['href' => '?page=become-member', 'text' => 'Join Us'],
+                            ['href' => '?page=prayer-line', 'text' => 'Prayer Line'],
                         ];
 
                         foreach ($links as $link) {
