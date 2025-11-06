@@ -4,8 +4,8 @@
 
 include __DIR__ . '/includes/db.php'; // adjust path if needed
 
-$username = 'admin';                 // existing username
-$newPassword = 'NewSecureP@ssw0rd!'; // choose a strong password
+$username = 'admin';
+$newPassword = 'NewSecureP@ssw0rd!';
 
 if (empty($newPassword) || strlen($newPassword) < 8) {
     die("Choose a stronger password (min 8 chars).");
