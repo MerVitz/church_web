@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     error_log("Session Path: " . session_save_path());
     error_log("User logged in successfully.");
     
-    echo json_encode(["success" => true, "redirect" => "/?page=admin-home"]);
+    echo json_encode(["success" => true, "redirect" => "?page=admin-home"]);
     
     exit();
 }

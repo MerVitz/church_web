@@ -94,14 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Desktop
-        const desktopActive = document.querySelector(`nav a[href="/?page=${page}"]`);
+        const desktopActive = document.querySelector(`nav a[href="?page=${page}"]`);
         if (desktopActive) {
             desktopActive.classList.remove("text-black");
             desktopActive.classList.add("text-[#6C8BC9]", "font-bold");
         }
 
         // Mobile
-        const mobileActive = document.querySelector(`#mobile-menu a[href="/?page=${page}"]`);
+        const mobileActive = document.querySelector(`#mobile-menu a[href="?page=${page}"]`);
         if (mobileActive) {
             if (mobileActive.closest("#about-dropdown-mobile")) {
                 mobileActive.classList.remove("text-black");

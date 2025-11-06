@@ -66,7 +66,7 @@ switch ($page) {
             setcookie(session_name(), '', time() - 42000, "/");
         }
     
-        header("Location: /?page=admin-login");
+        header("Location: ?page=admin-login");
         exit();
 
     case 'admin-home':
@@ -76,7 +76,7 @@ switch ($page) {
         if (!isset($_SESSION['admin_name'])) {
             error_log("Access denied. Redirecting to admin-login...");
             $_SESSION['message'] = "Your session has expired. Please log in again.";
-            header("Location: /?page=admin-login");
+            header("Location: ?page=admin-login");
             exit();
         }
 

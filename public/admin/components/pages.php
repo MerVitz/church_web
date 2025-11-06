@@ -26,7 +26,7 @@
 
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header("Location: /?page=admin-login");
+    header("Location: ?page=admin-login");
     exit();
 }
 

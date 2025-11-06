@@ -21,7 +21,7 @@ $pageTitle = "Get Involved";
             <p class="text-black text-sm mb-4">
                 Join our church family and be part of a loving, faith-filled community. Grow spiritually and connect with others in meaningful ways.
             </p>
-            <a href="/?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join Now →</a>
+            <a href="?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join Now →</a>
         </div>
 
         <!-- ITEM -->
@@ -41,7 +41,7 @@ $pageTitle = "Get Involved";
             <p class="text-black text-sm mb-4">
                 Join mission trips and outreach programs to serve communities and share God’s love beyond the church walls.
             </p>
-            <a href="/?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join a Mission →</a>
+            <a href="?page=become-member" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Join a Mission →</a>
         </div>
 
         <!-- ITEM -->
@@ -51,7 +51,7 @@ $pageTitle = "Get Involved";
             <p class="text-black text-sm mb-4">
                 Use your skills and passions in ministry. There’s a place for everyone in our various departments.
             </p>
-            <a href="/?page=departments" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Explore Departments →</a>
+            <a href="?page=departments" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">Explore Departments →</a>
         </div>
 
         <!-- ITEM -->
@@ -71,7 +71,7 @@ $pageTitle = "Get Involved";
             <p class="text-black text-sm mb-4">
                 Engage with others through worship, seminars, and fellowships designed to uplift and inspire.
             </p>
-            <a href="/?page=activities" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">View Events →</a>
+            <a href="?page=activities" class="text-sm text-[#6C8BC9] hover:text-[#D18C7C] transition font-medium">View Events →</a>
         </div>
     </div>
 </main>

@@ -15,7 +15,7 @@ $whoWeAre = getWhoWeAre();
             <p class="text-lg text-black leading-relaxed mb-4">
                 <?= nl2br(htmlspecialchars($whoWeAre['content'] ?? 'Content coming soon...')); ?>
             </p>
-            <a href="/?page=become-member" class="mt-4 inline-block bg-[#6C8BC9] text-white px-6 py-3 rounded-md shadow-lg hover:bg-[#D18C7C]">
+            <a href="?page=become-member" class="mt-4 inline-block bg-[#6C8BC9] text-white px-6 py-3 rounded-md shadow-lg hover:bg-[#D18C7C]">
                 Get Involved
             </a>
         </div>
