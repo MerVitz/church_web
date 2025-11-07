@@ -59,18 +59,20 @@ if (isset($_GET['hero_id'])) {
 
             <div class="space-y-4">
 
-                <!-- Slide Select -->
-                <div>
-                    <label for="hero_id" class="text-sm font-medium">Select Slide</label>
-                    <select name="hero_id" id="hero_id"
-                            class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-                            onchange="loadHeroDetails(this.value)">
-                        <option value="">Choose hero slide...</option>
-                        <?php foreach ($heroSections as $index => $hero): ?>
-                            <option value="<?= htmlspecialchars($hero['id']) ?>">Slide <?= $index + 1 ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+            <!-- Slide Select -->
+            <div>
+                <label for="hero_id" class="text-sm font-medium">Select Slide</label>
+                <select name="hero_id" id="hero_id"
+                        class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        onchange="loadHeroDetails(this.value)">
+                    <option value="" selected>Select a slide to modify</option>
+                    <?php foreach ($heroSections as $index => $hero): ?>
+                        <option value="<?= htmlspecialchars($hero['id']) ?>">
+                            Slide <?= $index + 1 ?> — <?= htmlspecialchars($hero['title']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
                 <!-- Edit Section -->
                 <div id="editHeroSection" class="hidden space-y-4">
@@ -122,10 +124,17 @@ if (isset($_GET['hero_id'])) {
 
                         </div>
 
-                        <button type="submit"
-                                class="mt-2 px-6 py-2 bg-[#d4963a] text-white text-sm font-medium rounded-md hover:bg-[#b37d2a] transition">
-                            Save Changes
-                        </button>
+                        <div class="flex gap-3">
+                            <button type="submit"
+                                class="px-6 py-2 bg-[#d4963a] text-white text-sm font-medium rounded-md hover:bg-[#b37d2a] transition">
+                                Save Changes
+                            </button>
+
+                            <button type="button" id="cancelHeroEdit"
+                                class="px-6 py-2 border border-gray-400 text-sm font-medium rounded-md hover:bg-gray-100 transition">
+                                Cancel
+                            </button>
+                        </div>
                     </form>
 
                 </div>
@@ -142,27 +151,34 @@ if (isset($_GET['hero_id'])) {
 
 
 <script>
-    // TAB SWITCHING
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+    var originalHeroData = null;
 
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
-            document.getElementById(btn.dataset.tab).classList.remove("hidden");
-        });
+    document.addEventListener("DOMContentLoaded", () => {
+        // Ensure form hidden on first load and the select starts at placeholder
+        const select = document.getElementById("hero_id");
+        const editSection = document.getElementById("editHeroSection");
+
+        if (select) {
+            // reset to placeholder
+            select.value = "";
+        }
+        if (editSection) {
+            editSection.classList.add("hidden");
+        }
     });
 
     // Load slide data
     function loadHeroDetails(heroId) {
-        if (!heroId) {
-            document.getElementById("editHeroSection").classList.add("hidden");
-            return;
-        }
+        console.log("📡 Loading hero slide:", heroId);
+        if (!heroId) return;
 
         fetch(`/public/admin/components/pages.php?hero_id=${heroId}`)
             .then(response => response.json())
             .then(data => {
+                console.log("?Data loaded:", data);
+
+                originalHeroData = structuredClone(data);
+
                 document.getElementById("hero_id_hidden").value = data.id ?? "";
                 document.getElementById("title").value = data.title ?? "";
                 document.getElementById("hero_content").value = data.content ?? "";
@@ -176,7 +192,7 @@ if (isset($_GET['hero_id'])) {
                     preview.src = data.image_url;
                     preview.classList.remove("hidden");
                     placeholder.classList.add("hidden");
-                    filenameLabel.textContent = data.image_url.split("/").pop();
+                    filenameLabel.textContent = data.image_url;
                 } else {
                     preview.classList.add("hidden");
                     placeholder.classList.remove("hidden");
@@ -184,8 +200,23 @@ if (isset($_GET['hero_id'])) {
                 }
 
                 document.getElementById("editHeroSection").classList.remove("hidden");
-            });
+            })
+            .catch(error => console.log("?Fetch error:", error));
     }
+
+
+    // TAB SWITCHING
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
+            document.getElementById(btn.dataset.tab).classList.remove("hidden");
+        });
+    });
+
+
 
     // Live image preview when selecting a new file
     document.getElementById("heroImageInput").addEventListener("change", function () {
@@ -216,6 +247,24 @@ if (isset($_GET['hero_id'])) {
         fetch("/public/admin/models/heroModel.php", { method: "POST", body: formData })
             .then(response => response.json())
             .then(data => showMessage(data.message, data.status === "success" ? "green" : "red"));
+    });
+
+    // Cancel edits
+    document.getElementById("cancelHeroEdit").addEventListener("click", () => {
+        if (!originalHeroData) return;
+
+        document.getElementById("title").value = originalHeroData.title ?? "";
+        document.getElementById("hero_content").value = originalHeroData.content ?? "";
+        document.getElementById("image_url").value = originalHeroData.image_url ?? "";
+
+        if (originalHeroData.image_url) {
+            document.getElementById("heroPreview").src = originalHeroData.image_url;
+            document.getElementById("heroPreview").classList.remove("hidden");
+            document.getElementById("heroNoImage").classList.add("hidden");
+            document.getElementById("heroImageName").textContent = originalHeroData.image_url;
+        }
+
+        document.getElementById("heroImageInput").value = "";
     });
 
     // Message UI
