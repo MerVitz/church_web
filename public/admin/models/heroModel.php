@@ -5,7 +5,7 @@ include_once __DIR__ . '/../../../includes/db.php';
  * Fetch all hero sections.
  */
 function getHeroSections($conn) {
-    $storagePath = "/uploads/heroes/"; // keep inside function
+    $storagePath = "/public/images/";
 
     $stmt = $conn->query("SELECT * FROM hero ORDER BY created_at DESC");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,20 +23,17 @@ function getHeroSections($conn) {
  * Fetch a single hero section by ID.
  */
 function getHeroById($conn, $id) {
-    $storagePath = "/uploads/heroes/"; // keep inside function
+    $storagePath = "/public/images/";
 
     $stmt = $conn->prepare("SELECT * FROM hero WHERE id = ?");
     $stmt->execute([$id]);
     $hero = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    if ($hero) {
-        if (!empty($hero['image_url'])) {
-            $hero['image_url'] = $storagePath . $hero['image_url'];
-        }
-        return $hero;
-    } else {
-        return null;
+
+    if ($hero && !empty($hero['image_url'])) {
+        $hero['image_url'] = $storagePath . $hero['image_url'];
     }
+
+    return $hero ?: null;
 }
 
 /**
@@ -55,26 +52,27 @@ function updateHero($conn, $id, $title, $content, $image_filename) {
 }
 
 // Handle POST
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action']) && $_POST['action'] === "updateHero") {
-    if (!isset($_POST['id'], $_POST['title'], $_POST['content'], $_POST['image_url'])) {
-        echo json_encode(["status" => "error", "message" => "Missing required fields."]);
-        exit();
-    }
-
+if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST['action'] === "updateHero") {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $image_filename = basename($_POST['image_url']); // only filename
 
-    try {
-        if (updateHero($conn, $id, $title, $content, $image_filename)) {
-            echo json_encode(["status" => "success", "message" => "Hero section updated successfully."]);
-        } else {
-            echo json_encode(["status" => "error", "message" => "Failed to update hero section."]);
-        }
-    } catch (Exception $e) {
-        echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
+    $image_filename = basename($_POST['image_url']); // default
+
+    // If new image uploaded
+    if (!empty($_FILES['new_image']['name'])) {
+        $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/public/images/";
+        $newFile = time() . "_" . basename($_FILES['new_image']['name']);
+        move_uploaded_file($_FILES['new_image']['tmp_name'], $uploadDir . $newFile);
+        $image_filename = $newFile;
+    }
+
+    if (updateHero($conn, $id, $title, $content, $image_filename)) {
+        echo json_encode(["status" => "success", "message" => "Hero updated successfully."]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Database update failed."]);
     }
     exit();
 }
+
 ?>

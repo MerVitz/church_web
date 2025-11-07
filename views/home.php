@@ -8,32 +8,31 @@ $visionMissionSlogan = getVisionMissionSlogan();
 $notices = getNotices()
 ?>
 
+    <!-- Hero Section -->
+    <section id="hero-container" class="relative h-[55vh] lg:h-[75vh] overflow-hidden text-black">
+        <!-- Hero Slides -->
+        <?php if (!empty($heroContent)): ?>
+            <?php foreach ($heroContent as $index => $hero) : ?>
+                <div class="hero-slide <?= $index === 0 ? 'active' : '' ?>" 
+                    data-text="<?= htmlspecialchars($hero['title']) ?>" 
+                    data-subtext="<?= htmlspecialchars($hero['content']) ?>" 
+                    style="background-image: url('/public/images/<?= htmlspecialchars($hero['image_url']) ?>'); background-size: cover; background-position: top;">
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="text-center text-[#D18C7C] font-semibold">⚠ No hero content available.</p>
+        <?php endif; ?>
 
-<!-- Hero Section -->
-<section id="hero-container" class="relative h-[55vh] lg:h-[75vh] overflow-hidden text-black">
-    <!-- Hero Slides -->
-    <?php if (!empty($heroContent)): ?>
-        <?php foreach ($heroContent as $index => $hero) : ?>
-            <div class="hero-slide <?= $index === 0 ? 'active' : '' ?>" 
-                 data-text="<?= htmlspecialchars($hero['title']) ?>" 
-                 data-subtext="<?= htmlspecialchars($hero['content']) ?>" 
-                 style="background-image: url('<?= htmlspecialchars($hero['image_url']) ?>'); background-size: cover; background-position: top;">
-            </div>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p class="text-center text-[#D18C7C] font-semibold">⚠ No hero content available.</p>
-    <?php endif; ?>
-
-    <!-- Hero Text Container (Ensures Dynamic Updates) -->
-    <div class="text-container bg-[#ffffff]/80 p-4 rounded-md absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[75%] max-w-lg">
-        <h2 id="hero-title" class="text-2xl md:text-3xl font-bold text-center text-[#6C8BC9]">
-            <?= !empty($heroContent) ? htmlspecialchars($heroContent[0]['title']) : 'Welcome' ?>
-        </h2>
-        <p id="hero-subtext" class="text-sm md:text-base text-center mt-2 text-black">
-            <?= !empty($heroContent) ? htmlspecialchars($heroContent[0]['content']) : 'We are a place of faith and love.' ?>
-        </p>
-    </div>
-</section>
+        <!-- Hero Text Container (Ensures Dynamic Updates) -->
+        <div class="text-container bg-[#ffffff]/80 p-4 rounded-md absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[75%] max-w-lg">
+            <h2 id="hero-title" class="text-2xl md:text-3xl font-bold text-center text-[#6C8BC9]">
+                <?= !empty($heroContent) ? htmlspecialchars($heroContent[0]['title']) : 'Welcome' ?>
+            </h2>
+            <p id="hero-subtext" class="text-sm md:text-base text-center mt-2 text-black">
+                <?= !empty($heroContent) ? htmlspecialchars($heroContent[0]['content']) : 'We are a place of faith and love.' ?>
+            </p>
+        </div>
+    </section>
 
     <!-- Vision, Mission, Slogan, Core Values Section -->
     <section class="py-12 bg-[#ffffff] text-center">

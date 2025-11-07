@@ -27,6 +27,28 @@ header("Expires: Wed, 11 Jan 1984 05:00:00 GMT");
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="autocomplete" content="off">
 </head>
+    <style>
+        .tab-btn {
+            padding: 10px 18px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 6px 6px 0 0;
+            background: transparent;
+            color: #6b7280;
+            transition: 0.2s;
+        }
+        .tab-btn.active {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-bottom: none;
+            color: #374151;
+        }
+        .tab-content.hidden {
+            display: none;
+        }
+    </style>
+
+
 
 <body class="h-full bg-gray-100">
 

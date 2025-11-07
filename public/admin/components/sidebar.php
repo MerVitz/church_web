@@ -48,7 +48,7 @@
                 <a href="#" data-page="pages"
                    class="menu-item flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ease-in-out hover:bg-[#b37d2a]">
                     <img src="/public/images/manage.svg" alt="Manage Pages" class="w-6 h-6">
-                    <span>Manage Pages</span>
+                    <span>Content Management</span>
                 </a>
             </li>
 

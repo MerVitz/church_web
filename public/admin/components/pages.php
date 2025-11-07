@@ -42,45 +42,118 @@ if (isset($_GET['hero_id'])) {
     exit();
 }
 ?>
-<div class="h-full w-full flex flex-col space-y-6 p-6 overflow-y-auto">
-
-    <h1 class="text-3xl font-bold text-gray-700 mb-6">Edit Homepage Hero Section</h1>
-
-    <!-- Dropdown to select hero slide -->
-    <label for="hero_id" class="block text-lg font-semibold text-gray-700 mb-2">Select Hero Slide:</label>
-    <select name="hero_id" id="hero_id" class="w-full p-2 border border-gray-300 rounded-md" onchange="loadHeroDetails(this.value)">
-        <option value="">-- Select a Hero Slide --</option>
-        <?php foreach ($heroSections as $index => $hero): ?>
-            <option value="<?= htmlspecialchars($hero['id']) ?>">Slide <?= $index + 1 ?></option>
-        <?php endforeach; ?>
-    </select>
-
-    <!-- Hero Edit Form -->
-    <div id="editHeroSection" class="hidden mt-6">
-        <div id="heroMessage" class="hidden p-3 text-center font-semibold rounded-md mb-4"></div>
-        
-        <form method="POST" id="heroForm">
-            <input type="hidden" name="id" id="hero_id_hidden">
-
-            <label for="title" class="block text-lg font-semibold text-gray-700 mb-2">Title:</label>
-            <input type="text" name="title" id="title" class="w-full p-2 border border-gray-300 rounded-md">
-
-            <label for="hero_content" class="block text-lg font-semibold text-gray-700 mb-2">Hero Content:</label>
-            <textarea name="content" id="hero_content" rows="4" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
-
-            <label for="image_url" class="block text-lg font-semibold text-gray-700 mb-2">Image URL:</label>
-            <input type="text" name="image_url" id="image_url" class="w-full p-2 border border-gray-300 rounded-md">
-
-            <button type="submit" class="mt-4 p-3 bg-[#d4963a] text-white font-semibold rounded-lg hover:bg-[#b37d2a] transition">
-                Save Changes
-            </button>
-        </form>
+<div class="h-full w-full flex flex-col p-8 space-y-10 overflow-y-auto text-gray-700">
+    <!-- Tab Navigation -->
+    <div class="flex gap-2 border-b border-gray-200">
+        <button class="tab-btn active" data-tab="heroTab">Hero Slider</button>
+        <button class="tab-btn" data-tab="noticeTab">Notice Board</button>
+        <button class="tab-btn" data-tab="activitiesTab">Activities</button>
+        <button class="tab-btn" data-tab="sermonsTab">Sermons</button>
     </div>
+
+    <!-- HERO TAB -->
+    <div id="heroTab" class="tab-content block space-y-6">
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
+            <h2 class="text-lg font-medium mb-4">Edit Hero Slider</h2>
+
+            <div class="space-y-4">
+
+                <!-- Slide Select -->
+                <div>
+                    <label for="hero_id" class="text-sm font-medium">Select Slide</label>
+                    <select name="hero_id" id="hero_id"
+                            class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
+                            onchange="loadHeroDetails(this.value)">
+                        <option value="">Choose hero slide...</option>
+                        <?php foreach ($heroSections as $index => $hero): ?>
+                            <option value="<?= htmlspecialchars($hero['id']) ?>">Slide <?= $index + 1 ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <!-- Edit Section -->
+                <div id="editHeroSection" class="hidden space-y-4">
+
+                    <div id="heroMessage" class="hidden p-3 text-center text-sm rounded-md"></div>
+
+                    <form method="POST" id="heroForm" enctype="multipart/form-data" class="space-y-6">
+                        <input type="hidden" name="id" id="hero_id_hidden">
+
+                        <!-- Two Column Layout -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            <!-- Text Inputs -->
+                            <div class="space-y-4 md:col-span-2">
+                                <div>
+                                    <label class="text-sm font-medium">Title</label>
+                                    <input type="text" name="title" id="title"
+                                        class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm">
+                                </div>
+
+                                <div>
+                                    <label class="text-sm font-medium">Hero Content</label>
+                                    <textarea name="content" id="hero_content" rows="5"
+                                            class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm"></textarea>
+                                </div>
+
+                                <div>
+                                    <label class="text-sm font-medium">Upload New Image</label>
+                                    <input type="file" id="heroImageInput" accept="image/*"
+                                        class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md text-sm">
+                                </div>
+
+                                <input type="hidden" name="image_url" id="image_url">
+                            </div>
+
+                            <!-- Image Preview -->
+                            <div>
+                                <label class="text-sm font-medium">Current Preview</label>
+
+                                <div class="mt-1 w-full h-48 border border-gray-300 bg-gray-50 rounded-md overflow-hidden">
+                                    <img id="heroPreview" src="" class="w-full h-full object-cover hidden">
+                                    <span id="heroNoImage" class="flex items-center justify-center h-full text-gray-400 text-xs">
+                                        No image selected
+                                    </span>
+                                </div>
+
+                                <p id="heroImageName" class="text-xs text-gray-600 mt-2 text-center"></p>
+                            </div>
+
+                        </div>
+
+                        <button type="submit"
+                                class="mt-2 px-6 py-2 bg-[#d4963a] text-white text-sm font-medium rounded-md hover:bg-[#b37d2a] transition">
+                            Save Changes
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="noticeTab" class="tab-content hidden"></div>
+    <div id="activitiesTab" class="tab-content hidden"></div>
+    <div id="sermonsTab" class="tab-content hidden"></div>
+
 </div>
+
+
 <script>
-    /**
-     * Load hero details from backend when a slide is selected.
-     */
+    // TAB SWITCHING
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
+            document.getElementById(btn.dataset.tab).classList.remove("hidden");
+        });
+    });
+
+    // Load slide data
     function loadHeroDetails(heroId) {
         if (!heroId) {
             document.getElementById("editHeroSection").classList.add("hidden");
@@ -90,70 +163,71 @@ if (isset($_GET['hero_id'])) {
         fetch(`/public/admin/components/pages.php?hero_id=${heroId}`)
             .then(response => response.json())
             .then(data => {
-                if (data.error) {
-                    showMessage(data.error, "red");
-                    return;
+                document.getElementById("hero_id_hidden").value = data.id ?? "";
+                document.getElementById("title").value = data.title ?? "";
+                document.getElementById("hero_content").value = data.content ?? "";
+                document.getElementById("image_url").value = data.image_url ?? "";
+
+                const preview = document.getElementById("heroPreview");
+                const placeholder = document.getElementById("heroNoImage");
+                const filenameLabel = document.getElementById("heroImageName");
+
+                if (data.image_url) {
+                    preview.src = data.image_url;
+                    preview.classList.remove("hidden");
+                    placeholder.classList.add("hidden");
+                    filenameLabel.textContent = data.image_url.split("/").pop();
+                } else {
+                    preview.classList.add("hidden");
+                    placeholder.classList.remove("hidden");
+                    filenameLabel.textContent = "";
                 }
 
-                // Populate form with hero data
-                document.getElementById("hero_id_hidden").value = data.id || "";
-                document.getElementById("title").value = data.title || "";
-                document.getElementById("hero_content").value = data.content || "";
-                document.getElementById("image_url").value = data.image_url || "";
-
                 document.getElementById("editHeroSection").classList.remove("hidden");
-            })
-            .catch(error => {
-                console.error("Error fetching hero data:", error);
-                showMessage("Error fetching hero data.", "red");
             });
     }
 
-    /**
-     * Handle form submission via AJAX (update hero).
-     */
-    document.getElementById("heroForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+    // Live image preview when selecting a new file
+    document.getElementById("heroImageInput").addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
 
-        let formData = new FormData(this);
-        formData.append("action", "updateHero");
+        const reader = new FileReader();
+        reader.onload = e => {
+            const preview = document.getElementById("heroPreview");
+            preview.src = e.target.result;
+            preview.classList.remove("hidden");
 
-        fetch("/public/admin/models/heroModel.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success") {
-                showMessage("Hero section updated successfully!", "green");
-            } else {
-                showMessage("Failed to update hero section: " + data.message, "red");
-            }
-        })
-        .catch(error => {
-            console.error("Error submitting form:", error);
-            showMessage("An error occurred while updating.", "red");
-        });
+            document.getElementById("heroNoImage").classList.add("hidden");
+            document.getElementById("heroImageName").textContent = file.name;
+        };
+        reader.readAsDataURL(file);
     });
 
-    /**
-     * Utility: Show success/error messages.
-     */
+    // Save changes
+    document.getElementById("heroForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        formData.append("action", "updateHero");
+
+        const file = document.getElementById("heroImageInput").files[0];
+        if (file) formData.append("new_image", file);
+
+        fetch("/public/admin/models/heroModel.php", { method: "POST", body: formData })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.status === "success" ? "green" : "red"));
+    });
+
+    // Message UI
     function showMessage(message, type) {
-        let messageBox = document.getElementById("heroMessage");
-        messageBox.textContent = message;
-        messageBox.classList.remove("hidden");
-
-        if (type === "green") {
-            messageBox.classList.add("bg-green-100", "text-green-800");
-            messageBox.classList.remove("bg-red-100", "text-red-800");
-        } else {
-            messageBox.classList.add("bg-red-100", "text-red-800");
-            messageBox.classList.remove("bg-green-100", "text-green-800");
-        }
-
-        setTimeout(() => {
-            messageBox.classList.add("hidden");
-        }, 3000);
+        const box = document.getElementById("heroMessage");
+        box.textContent = message;
+        box.classList.remove("hidden");
+        box.classList.toggle("bg-green-100", type === "green");
+        box.classList.toggle("text-green-800", type === "green");
+        box.classList.toggle("bg-red-100", type === "red");
+        box.classList.toggle("text-red-800", type === "red");
+        setTimeout(() => box.classList.add("hidden"), 3000);
     }
 </script>
+
